@@ -1,0 +1,28 @@
+.menu li a {
+  font: 700 12px 'Poppins', 'Open Sans', sans-serif;
+}
+
+.dropdown-cart-action .btn {
+  font-weight: 700;
+}
+
+.footer-middle .container>.row>div:last-child {
+  text-align: left;
+}
+
+.mobile-menu li a {
+  font-weight: 700;
+}
+
+.footer .widget .widget-content .col-title {
+  padding-left: 0;
+  font-size: 1.6rem;
+}
+
+.footer .widget ul {
+  margin-bottom: 10px;
+}
+
+.list li a {
+  font-size: 1.3rem;
+}
