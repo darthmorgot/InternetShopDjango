@@ -26,3 +26,7 @@
 .list li a {
   font-size: 1.3rem;
 }
+
+.home-banner .banner-content {
+  margin-right: -3.4vw;
+}
