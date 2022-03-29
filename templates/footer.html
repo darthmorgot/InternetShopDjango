@@ -1,0 +1,185 @@
+{% load static %}
+  <footer class="footer">
+    <div class="instagram-box">
+      <div class="instagram-follow">
+        <div class="container">
+          <i class="fab fa-instagram"></i>
+          <div class="brand">
+            <h3>Мы в Instagram</h3>
+            <p>@velosamshop</p>
+          </div>
+        </div>
+      </div>
+      <div class="instagram-carousel owl-carousel owl-theme text-center" data-toggle="owl" data-owl-options="{
+        'loop' : true,
+        'nav': false,
+        'dots': false,
+        'margin' : 0,
+        'autoHeight': true,
+        'autoplay': true,
+        'autoplayTimeout': 5000,
+        'responsive': {
+          '0': {
+            'items': 2
+          },
+          '480': {
+            'items': 3
+          },
+          '950': {
+            'items': 4
+          },
+          '1200': {
+            'items' : 5
+          },
+          '1500': {
+            'items': 6
+          }
+        }
+      }">
+        <img src="{% static 'images/instagram/instagram1.jpg' %}" alt="Картинки из Инстаграма">
+        <img src="{% static 'images/instagram/instagram2.jpg' %}" alt="Картинки из Инстаграма">
+        <img src="{% static 'images/instagram/instagram3.jpg' %}" alt="Картинки из Инстаграма">
+        <img src="{% static 'images/instagram/instagram4.jpg' %}" alt="Картинки из Инстаграма">
+        <img src="{% static 'images/instagram/instagram5.jpg' %}" alt="Картинки из Инстаграма">
+        <img src="{% static 'images/instagram/instagram6.jpg' %}" alt="Картинки из Инстаграма">
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="newsletter-widget">
+          <i class="icon-envolope"></i>
+
+          <div class="newsletter-info">
+            <h3>Получайте специальные предложения и скидки</h3>
+            <p>Получайте всю самую свежую информацию о событиях, распродажах и предложениях.</p>
+          </div>
+
+          <form action="#" method="get">
+            <div class="submit-wrapper">
+              <input type="search" class="form-control" name="news" id="news" placeholder="Введите Ваш E-mail адрес..."
+                     required="">
+              <button class="btn" type="submit">Подписаться</button>
+            </div><!-- End .header-search-wrapper -->
+          </form>
+        </div>
+
+        <div class="social-icons">
+          <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-middle">
+      <div class="container">
+        <div class="row row-sm">
+          <div class="col-md-4 col-lg-4 col-sm-4 col-4">
+            <div class="widget">
+              <div class="widget-content row row-sm">
+                <ul class="col-xl-6">
+                  <li><a href="#" class="col-title">Велосипеды</a></li>
+                  <li><a href="#">Для взрослых</a></li>
+                  <li><a href="#">Для детей</a></li>
+                  <li><a href="#">Двухколесные</a></li>
+                  <li><a href="#">Трехколесные</a></li>
+                  <li><a href="#">Горные</a></li>
+                  <li><a href="#">Складные</a></li>
+                </ul>
+                <ul class="col-xl-6">
+                  <li><a href="#" class="col-title">Самокаты</a></li>
+                  <li><a href="#">Для взрослых</a></li>
+                  <li><a href="#">Для детей</a></li>
+                  <li><a href="#">Двухколесные</a></li>
+                  <li><a href="#">Трехколесные</a></li>
+                  <li><a href="#">Складные</a></li>
+                  <li><a href="#">Электросамокаты</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-4 col-4">
+            <div class="widget">
+              <div class="widget-content row row-sm">
+                <ul class="col-xl-6">
+                  <li><a href="#" class="col-title">Беговелы</a></li>
+                  <li><a href="#">Беговелы-самокаты</a></li>
+                  <li><a href="#">Беговелы-каталки</a></li>
+                  <li><a href="#">Беговелы 2 в 1</a></li>
+                  <li><a href="#">Беговелы-машинки</a></li>
+                  <li><a href="#">Спортивные</a></li>
+                </ul>
+                <ul class="col-xl-6">
+                  <li><a href="#" class="col-title">Скейтборды</a></li>
+                  <li><a href="#">Детские</a></li>
+                  <li><a href="#">Лонгборды</a></li>
+                  <li><a href="#">Круизеры</a></li>
+                  <li><a href="#">Пениборды</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-4 col-4">
+            <div class="widget">
+              <div class="widget-content row row-sm">
+                <ul class="col-xl-6">
+                  <li><a href="#" class="col-title">Роликовые коньки</a></li>
+                  <li><a href="#">Детские</a></li>
+                  <li><a href="#">Подростки</a></li>
+                  <li><a href="#">Взрослые</a></li>
+                </ul>
+                <ul class="col-xl-6">
+                  <li><a href="#" class="col-title">Прочие товары</a></li>
+                  <li><a href="#">Батуты</a></li>
+                  <li><a href="#">Снегокаты</a></li>
+                  <li><a href="#">Тюбинги</a></li>
+                  <li><a href="#">Аксессуары и запчасти</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-sm">
+          <div class="col-md-4 col-lg-4 col-sm-4 col-4">
+            <img src="{% static 'images/logo-white.png' %}">
+            <p>Быстро, качественно, дешево - <br>выберите любые две опции</p>
+            <div class="social-link">
+              <h3 class="link-title">ВОПРОСЫ?</h3>
+              <a href="tel:+78001234567">8-800-123-45-67</a>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-4 col-4">
+            <div class="widget">
+              <div class="widget-content row row-sm">
+                <ul class="col-xl-6">
+                  <li><a href="dashboard.html">Личный кабинет</a></li>
+                  <li><a href="#">Отслеживание заказа</a></li>
+                  <li><a href="#">Поддержка</a></li>
+                  <li><a href="#">Способы оплаты</a></li>
+                  <li><a href="#">Способы доставки</a></li>
+                  <li><a href="#">ЧаВо</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-4 col-4">
+            <div class="widget">
+              <div class="widget-content row row-sm">
+                <ul class="col-xl-6">
+                  <li><a href="about.html">Про магазин</a></li>
+                  <li><a href="#">Условия и положения</a></li>
+                  <li><a href="#">Наши гарантии</a></li>
+                  <li><a href="#">Соглашение о <br>конфиденциальности</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p>ВелоCам © 2021 Все права защищены</p>
+    </div>
+  </footer><!-- End .footer -->
