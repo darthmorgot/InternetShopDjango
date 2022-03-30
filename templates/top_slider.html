@@ -1,0 +1,44 @@
+{% load static %}
+    <div class="top-slider owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
+        'items' : 1,
+        'margin' : 0,
+        'nav': true,
+        'dots': false,
+        'autoplay': true
+      }">
+      <div class="home-slide">
+        <div class="slide-content flex-column flex-lg-row">
+          <div class="content-left mx-auto mr-lg-0 py-5">
+            <span>Супер</span>
+            <h2>20% скидка</h2>
+            <h4 class="cross-txt">Велосипеды</h4>
+            <h3 class="mb-2 mb-lg-8">Летняя распродажа</h3>
+            <button class="btn">Распродажа</button>
+          </div>
+          <div class="image-container mx-auto py-5">
+            <img src="{% static 'images/slider/slide2.png' %}" class="slide-img1" alt="Картинка слайда">
+            <div class="image-info mt-2 mt-lg-6 flex-column flex-sm-row">
+              <div class="info-left">
+                <h4>Только <span>9990<sup>руб.</sup></span></h4>
+              </div>
+              <div class="info-right">
+                <h4>Начните делать покупки прямо сейчас</h4>
+                <p>*Дополнительная скидка на все покупки</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-slide">
+        <div class="slide-content flex-column flex-lg-row">
+          <img src="{% static 'images/slider/slide1.png' %}" class="mx-auto mr-lg-0 py-5" alt="Картинка слайда">
+          <div class="content-right order-first order-lg-1 mx-auto py-5">
+            <span>Супер</span>
+            <h2>20% скидка</h2>
+            <h4 class="cross-txt">Велосипеды</h4>
+            <h3 class="mb-2 mb-lg-8">Летняя распродажа</h3>
+            <button class="btn">Распродажа</button>
+          </div>
+        </div>
+      </div>
+    </div>
