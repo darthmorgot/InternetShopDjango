@@ -5,4 +5,4 @@ def index(request):
     context = {
         'title': 'ВелоСам',
     }
-    return render(request, 'base.html', context=context)
+    return render(request, 'products/index.html', context=context)
