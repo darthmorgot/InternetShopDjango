@@ -29,6 +29,7 @@
             }
           }
         }">
+          {% for num in range %}
           <div class="product-default inner-quickview inner-icon center-details">
             <figure>
               <a href="product.html">
@@ -51,7 +52,7 @@
                 </div>
               </div>
               <h2 class="product-title">
-                <a href="product.html">Велосипед 1</a>
+                <a href="product.html">Велосипед {{ num }}</a>
               </h2>
               <div class="ratings-container">
                 <div class="product-ratings">
@@ -64,186 +65,7 @@
               </div><!-- End .price-box -->
             </div><!-- End .product-details -->
           </div>
-
-          <div class="product-default inner-quickview inner-icon center-details">
-            <figure>
-              <a href="product.html">
-                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-              </a>
-              <div class="label-group">
-                <div class="product-label label-black">2<sup>o</sup></div>
-              </div>
-              <div class="btn-icon-group">
-                <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
-                  <i class="icon-bag"></i>
-                </button>
-              </div>
-              <a href="ajax/product-quick-view.html" class="btn-quickview">Быстрый просмотр</a>
-            </figure>
-            <div class="product-details">
-              <div class="category-wrap">
-                <div class="category-list">
-                  <a href="category.html" class="product-category">Велосипеды</a>
-                </div>
-              </div>
-              <h2 class="product-title">
-                <a href="product.html">Велосипед 2</a>
-              </h2>
-              <div class="ratings-container">
-                <div class="product-ratings">
-                  <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                </div><!-- End .product-ratings -->
-              </div><!-- End .product-container -->
-              <div class="price-box">
-                <span class="old-price">5900</span><span>&nbsp;руб.</span>
-                <span class="product-price">4900</span><span>&nbsp;руб.</span>
-              </div><!-- End .price-box -->
-            </div><!-- End .product-details -->
-          </div>
-
-          <div class="product-default inner-quickview inner-icon center-details">
-            <figure>
-              <a href="product.html">
-                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-              </a>
-              <div class="label-group">
-                <div class="product-label label-black">3<sup>o</sup></div>
-              </div>
-              <div class="btn-icon-group">
-                <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
-                  <i class="icon-bag"></i>
-                </button>
-              </div>
-              <a href="ajax/product-quick-view.html" class="btn-quickview">Быстрый просмотр</a>
-            </figure>
-            <div class="product-details">
-              <div class="category-wrap">
-                <div class="category-list">
-                  <a href="category.html" class="product-category">Велосипеды</a>
-                </div>
-              </div>
-              <h2 class="product-title">
-                <a href="product.html">Велосипед 3</a>
-              </h2>
-              <div class="ratings-container">
-                <div class="product-ratings">
-                  <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                </div><!-- End .product-ratings -->
-              </div><!-- End .product-container -->
-              <div class="price-box">
-                <span class="old-price">5900</span><span>&nbsp;руб.</span>
-                <span class="product-price">4900</span><span>&nbsp;руб.</span>
-              </div><!-- End .price-box -->
-            </div><!-- End .product-details -->
-          </div>
-
-          <div class="product-default inner-quickview inner-icon center-details">
-            <figure>
-              <a href="product.html">
-                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-              </a>
-              <div class="label-group">
-                <div class="product-label label-black">4<sup>o</sup></div>
-              </div>
-              <div class="btn-icon-group">
-                <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
-                  <i class="icon-bag"></i>
-                </button>
-              </div>
-              <a href="ajax/product-quick-view.html" class="btn-quickview">Быстрый просмотр</a>
-            </figure>
-            <div class="product-details">
-              <div class="category-wrap">
-                <div class="category-list">
-                  <a href="category.html" class="product-category">Велосипеды</a>
-                </div>
-              </div>
-              <h2 class="product-title">
-                <a href="product.html">Велосипед 4</a>
-              </h2>
-              <div class="ratings-container">
-                <div class="product-ratings">
-                  <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                </div><!-- End .product-ratings -->
-              </div><!-- End .product-container -->
-              <div class="price-box">
-                <span class="old-price">5900</span><span>&nbsp;руб.</span>
-                <span class="product-price">4900</span><span>&nbsp;руб.</span>
-              </div><!-- End .price-box -->
-            </div><!-- End .product-details -->
-          </div>
-
-          <div class="product-default inner-quickview inner-icon center-details">
-            <figure>
-              <a href="product.html">
-                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-              </a>
-              <div class="label-group">
-                <div class="product-label label-black">5<sup>o</sup></div>
-              </div>
-              <div class="btn-icon-group">
-                <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
-                  <i class="icon-bag"></i>
-                </button>
-              </div>
-              <a href="ajax/product-quick-view.html" class="btn-quickview">Быстрый просмотр</a>
-            </figure>
-            <div class="product-details">
-              <div class="category-wrap">
-                <div class="category-list">
-                  <a href="category.html" class="product-category">Велосипеды</a>
-                </div>
-              </div>
-              <h2 class="product-title">
-                <a href="product.html">Велосипед 5</a>
-              </h2>
-              <div class="ratings-container">
-                <div class="product-ratings">
-                  <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                </div><!-- End .product-ratings -->
-              </div><!-- End .product-container -->
-              <div class="price-box">
-                <span class="old-price">5900</span><span>&nbsp;руб.</span>
-                <span class="product-price">4900</span><span>&nbsp;руб.</span>
-              </div><!-- End .price-box -->
-            </div><!-- End .product-details -->
-          </div>
-
-          <div class="product-default inner-quickview inner-icon center-details">
-            <figure>
-              <a href="product.html">
-                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-              </a>
-              <div class="label-group">
-                <div class="product-label label-black">6<sup>o</sup></div>
-              </div>
-              <div class="btn-icon-group">
-                <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
-                  <i class="icon-bag"></i>
-                </button>
-              </div>
-              <a href="ajax/product-quick-view.html" class="btn-quickview">Быстрый просмотр</a>
-            </figure>
-            <div class="product-details">
-              <div class="category-wrap">
-                <div class="category-list">
-                  <a href="category.html" class="product-category">Велосипеды</a>
-                </div>
-              </div>
-              <h2 class="product-title">
-                <a href="product.html">Велосипед 6</a>
-              </h2>
-              <div class="ratings-container">
-                <div class="product-ratings">
-                  <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                </div><!-- End .product-ratings -->
-              </div><!-- End .product-container -->
-              <div class="price-box">
-                <span class="old-price">5900</span><span>&nbsp;руб.</span>
-                <span class="product-price">4900</span><span>&nbsp;руб.</span>
-              </div><!-- End .price-box -->
-            </div><!-- End .product-details -->
-          </div>
+          {% endfor %}
         </div>
       </section>
       {% endblock %}
@@ -279,6 +101,7 @@
             }
           }
         }">
+          {% for num in range %}
           <div class="product-default inner-quickview inner-icon center-details">
             <figure>
               <a href="product.html">
@@ -298,7 +121,7 @@
                 </div>
               </div>
               <h2 class="product-title">
-                <a href="product.html">Очки</a>
+                <a href="product.html">Товар {{ num }}</a>
               </h2>
               <div class="ratings-container">
                 <div class="product-ratings">
@@ -311,138 +134,7 @@
               </div><!-- End .price-box -->
             </div><!-- End .product-details -->
           </div>
-
-          <div class="product-default inner-quickview inner-icon center-details">
-            <figure>
-              <a href="product.html">
-                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-              </a>
-              <div class="btn-icon-group">
-                <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
-                  <i class="icon-bag"></i>
-                </button>
-              </div>
-              <a href="ajax/product-quick-view.html" class="btn-quickview">Быстрый просмотр</a>
-            </figure>
-            <div class="product-details">
-              <div class="category-wrap">
-                <div class="category-list">
-                  <a href="category.html" class="product-category">Аксессуары и запчасти</a>
-                </div>
-              </div>
-              <h2 class="product-title">
-                <a href="product.html">Замок</a>
-              </h2>
-              <div class="ratings-container">
-                <div class="product-ratings">
-                  <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                </div><!-- End .product-ratings -->
-              </div><!-- End .product-container -->
-              <div class="price-box">
-                <span class="old-price">1590</span><span>руб.</span>
-                <span class="product-price">1490</span><span>руб.</span>
-              </div><!-- End .price-box -->
-            </div><!-- End .product-details -->
-          </div>
-
-          <div class="product-default inner-quickview inner-icon center-details">
-            <figure>
-              <a href="product.html">
-                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-              </a>
-              <div class="btn-icon-group">
-                <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
-                  <i class="icon-bag"></i>
-                </button>
-              </div>
-              <a href="ajax/product-quick-view.html" class="btn-quickview">Быстрый просмотр</a>
-            </figure>
-            <div class="product-details">
-              <div class="category-wrap">
-                <div class="category-list">
-                  <a href="category.html" class="product-category">Аксессуары и запчасти</a>
-                </div>
-              </div>
-              <h2 class="product-title">
-                <a href="product.html">Спидометр</a>
-              </h2>
-              <div class="ratings-container">
-                <div class="product-ratings">
-                  <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                </div><!-- End .product-ratings -->
-              </div><!-- End .product-container -->
-              <div class="price-box">
-                <span class="old-price">3590</span><span>руб.</span>
-                <span class="product-price">2490</span><span>руб.</span>
-              </div><!-- End .price-box -->
-            </div><!-- End .product-details -->
-          </div>
-
-          <div class="product-default inner-quickview inner-icon center-details">
-            <figure>
-              <a href="product.html">
-                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-              </a>
-              <div class="btn-icon-group">
-                <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
-                  <i class="icon-bag"></i>
-                </button>
-              </div>
-              <a href="ajax/product-quick-view.html" class="btn-quickview">Быстрый просмотр</a>
-            </figure>
-            <div class="product-details">
-              <div class="category-wrap">
-                <div class="category-list">
-                  <a href="category.html" class="product-category">Аксессуары и запчасти</a>
-                </div>
-              </div>
-              <h2 class="product-title">
-                <a href="product.html">Шестерни</a>
-              </h2>
-              <div class="ratings-container">
-                <div class="product-ratings">
-                  <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                </div><!-- End .product-ratings -->
-              </div><!-- End .product-container -->
-              <div class="price-box">
-                <span class="old-price">7590</span><span>руб.</span>
-                <span class="product-price">6490</span><span>руб.</span>
-              </div><!-- End .price-box -->
-            </div><!-- End .product-details -->
-          </div>
-
-          <div class="product-default inner-quickview inner-icon center-details">
-            <figure>
-              <a href="product.html">
-                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-              </a>
-              <div class="btn-icon-group">
-                <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
-                  <i class="icon-bag"></i>
-                </button>
-              </div>
-              <a href="ajax/product-quick-view.html" class="btn-quickview">Быстрый просмотр</a>
-            </figure>
-            <div class="product-details">
-              <div class="category-wrap">
-                <div class="category-list">
-                  <a href="category.html" class="product-category">Аксессуары и запчасти</a>
-                </div>
-              </div>
-              <h2 class="product-title">
-                <a href="product.html">Переключатель</a>
-              </h2>
-              <div class="ratings-container">
-                <div class="product-ratings">
-                  <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-                </div><!-- End .product-ratings -->
-              </div><!-- End .product-container -->
-              <div class="price-box">
-                <span class="old-price">4590</span><span>руб.</span>
-                <span class="product-price">3490</span><span>руб.</span>
-              </div><!-- End .price-box -->
-            </div><!-- End .product-details -->
-          </div>
+          {% endfor %}
         </div>
       </section>
       {% endblock %}
