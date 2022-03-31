@@ -2,11 +2,11 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
-def index(request):
-    context = {
-        'title': 'ВелоСам',
-    }
-    return render(request, 'products/index.html', context=context)
+# def index(request):
+#     context = {
+#         'title': 'Главная',
+#     }
+#     return render(request, 'products/index.html', context=context)
 
 
 class HomePageView(TemplateView):
@@ -14,7 +14,7 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'ВелоСам'
+        context['title'] = 'Главная'
         context['product_range'] = range(1, 7)
         context['cart_range'] = range(1, 3)
         return context
