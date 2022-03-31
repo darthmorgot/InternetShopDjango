@@ -9,11 +9,12 @@ def index(request):
     return render(request, 'products/index.html', context=context)
 
 
-class HomeView(TemplateView):
+class HomePageView(TemplateView):
     template_name = 'products/index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'ВелоСам'
-        context['range'] = range(1, 7)
+        context['product_range'] = range(1, 7)
+        context['cart_range'] = range(1, 3)
         return context
