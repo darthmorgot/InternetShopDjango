@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+  <div class="page-header page-header-bg">
+    <div class="container">
+      <h1>О нас</h1>
+    </div><!-- End .container -->
+  </div><!-- End .page-header -->
+
+  <nav aria-label="breadcrumb" class="breadcrumb-nav mt-0">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">О нас</li>
+      </ol>
+    </div>
+  </nav>
+
+  <div class="about-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <h2 class="subtitle">НАША ИСТОРИЯ</h2>
+          <p>Современные технологии достигли такого уровня, что дальнейшее развитие различных форм деятельности
+            представляет собой интересный эксперимент проверки благоприятных перспектив. Противоположная точка зрения
+            подразумевает, что непосредственные участники технического прогресса, инициированные исключительно
+            синтетически, объединены в целые кластеры себе подобных. Таким образом, укрепление и развитие внутренней
+            структуры в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным
+            потребностям.</p>
+        </div><!-- End .col-lg-7 -->
+
+        <div class="col-lg-5">
+          <h2 class="subtitle">ОТЗЫВЫ КЛИЕНТОВ</h2>
+
+          <div class="testimonials-slider owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
+                'items': 1,
+                'dots': true
+              }">
+            {% include 'information/client_reviews.html' %}
+          </div><!-- End .testimonials-slider -->
+        </div><!-- End .col-lg-5 -->
+      </div><!-- End .row -->
+    </div><!-- End .container -->
+  </div><!-- End .about-section -->
+
+  <div class="gallery-section popup-gallery">
+    <div class="container">
+      <h2 class="subtitle">ФОТОГАЛЕРЕЯ</h2>
+      <div class="owl-carousel owl-theme text-center" data-toggle="owl" data-owl-options="{
+          'dots': true,
+          'margin': 20,
+          'responsive': {
+            '0': {
+              'items': 1
+            },
+            '500': {
+              'items': 2
+            },
+            '768': {
+              'items': 3
+            },
+            '992': {
+              'items': 4
+            }
+          }
+        }">
+        <a href="{% static 'images/about/gallery1.jpg' %}" class="gallery-item">
+          <img src="{% static 'images/about/gallery1.jpg' %}" alt="Картинка">
+        </a>
+        <a href="{% static 'images/about/gallery2.jpg' %}" class="gallery-item">
+          <img src="{% static 'images/about/gallery2.jpg' %}" alt="Картинка">
+        </a>
+        <a href="{% static 'images/about/gallery3.jpg' %}" class="gallery-item">
+          <img src="{% static 'images/about/gallery3.jpg' %}" alt="Картинка">
+        </a>
+        <a href="{% static 'images/about/gallery4.jpg' %}" class="gallery-item">
+          <img src="{% static 'images/about/gallery4.jpg' %}" alt="Картинка">
+        </a>
+      </div>
+    </div><!-- End .container -->
+  </div><!-- End .gallery-section -->
+
+  <div class="company-section">
+    <div class="container">
+      <div class="row align-items-lg-center">
+        <div class="col-md-6">
+          <img src="{% static 'images/about/img-1.jpg' %}" alt="Картинка">
+        </div><!-- End .col-lg-6 -->
+
+        <div class="col-md-6 padding-left-lg">
+          <h3 class="subtitle">НАША МИССИЯ</h3>
+          <p>Лишь сделанные на базе интернет-аналитики выводы, инициированные исключительно синтетически, преданы
+            социально-демократической анафеме. Также как сплочённость команды профессионалов требует от нас анализа
+            распределения внутренних резервов и ресурсов. Вот вам яркий пример современных тенденций - начало
+            повседневной работы по формированию позиции в значительной степени обусловливает важность экспериментов,
+            поражающих по своей масштабности и грандиозности.</p>
+
+          <h3 class="subtitle">НАШЕ ВИДЕНИЕ</h3>
+          <p>Идейные соображения высшего порядка, а также убеждённость некоторых оппонентов способствует подготовке и
+            реализации системы массового участия. Господа, существующая теория обеспечивает широкому кругу
+            (специалистов) участие в формировании поставленных обществом задач. Есть над чем задуматься: некоторые
+            особенности внутренней политики могут быть описаны максимально подробно.</p>
+        </div><!-- End .col-lg-6 -->
+      </div><!-- End .row -->
+    </div><!-- End .container -->
+  </div><!-- End .company-section -->
+
+  <div class="features-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="icon-shipped"></i>
+
+            <div class="feature-box-content">
+              <h3>БЕСПЛАТНАЯ ДОСТАВКА</h3>
+              <p>Учитывая ключевые сценарии, высококачественный прототип проекта играет определяющее значение для
+                своевременного выполнения сверхзадачи.</p>
+            </div><!-- End .feature-box-content -->
+          </div><!-- End .feature-box -->
+        </div><!-- End .col-md-4 -->
+
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="icon-us-dollar"></i>
+
+            <div class="feature-box-content">
+              <h3>100% ГАРАНТИЯ ВОЗВРАТА ДЕНЕГ</h3>
+              <p>Но интерактивные прототипы, превозмогая сложившуюся непростую экономическую ситуацию, заблокированы в
+                рамках своих собственных рациональных ограничений.</p>
+            </div><!-- End .feature-box-content -->
+          </div><!-- End .feature-box -->
+        </div><!-- End .col-md-4 -->
+
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="icon-online-support"></i>
+
+            <div class="feature-box-content">
+              <h3>ONLINE ПОДДЕРЖКА 24/7</h3>
+              <p>Также как высокотехнологичная концепция общественного уклада способствует повышению качества
+                распределения внутренних резервов и ресурсов!</p>
+            </div><!-- End .feature-box-content -->
+          </div><!-- End .feature-box -->
+        </div><!-- End .col-md-4 -->
+      </div><!-- End .row -->
+    </div><!-- End .container -->
+  </div><!-- End .features-section -->
+</main><!-- End .main -->
+{% endblock %}
