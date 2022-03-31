@@ -37,18 +37,18 @@
 <body>
 <div class="page-wrapper">
 <!-- Header -->
-{% include 'header.html' %}
+{% include 'included/header.html' %}
 
 {% block content %}{% endblock %}
 
 <!-- Footer -->
-{% include 'footer.html' %}
+{% include 'included/footer.html' %}
 </div><!-- End .page-wrapper -->
 
 <div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->
 
 <!-- Mobile menu -->
-{% include 'mobile_menu.html' %}
+{% include 'included/mobile_menu.html' %}
 
 <!-- Add Cart Modal -->
 {% block add_cart_modal %}{% endblock %}
