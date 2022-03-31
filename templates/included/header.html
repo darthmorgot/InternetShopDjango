@@ -1,0 +1,114 @@
+{% load static %}
+  <header class="header">
+    <div class="header-top">
+      <div class="container">
+        <div class="header-left header-dropdowns">
+          <div class="header-dropdown">
+            <a href="#">РУБ</a>
+            <div class="header-menu">
+              <ul>
+                <li><a href="#">РУБ</a></li>
+                <li><a href="#">CNY</a></li>
+              </ul>
+            </div><!-- End .header-menu -->
+          </div><!-- End .header-dropown -->
+        </div><!-- End .header-left -->
+
+        <div class="header-right">
+          <ul>
+            <li><a href="dashboard.html">Личный кабинет</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+            <li><a href="login.html">Вход</a></li>
+            <li><a href="login.html">Выход</a></li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End .header-top -->
+
+    <div class="header-middle sticky-header">
+      <div class="container">
+        <div class="header-left">
+          <button class="mobile-menu-toggler" type="button">
+            <i class="icon-menu"></i>
+          </button>
+          <a href="{% url 'home' %}" class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Shop Logo">
+          </a>
+          <nav class="main-nav">
+            <ul class="menu">
+              <li>
+                <a href="{% url 'home' %}">Главная</a>
+              </li>
+              <li class="sf-with-ul">
+                <a href="catalog.html">Каталог</a>
+                {% include 'included/menu_list.html' %}
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-right">
+          <div class="header-search">
+            <a href="#" class="search-toggle" role="button"><i class="icon-search-3"></i></a>
+            <form action="#" method="get">
+              <div class="header-search-wrapper">
+                <input type="search" class="form-control" name="seek" id="seek" placeholder="Я ишу..." required="">
+                <div class="select-custom">
+                  <select id="cat" name="cat">
+                    <option value="">Все категории</option>
+                    <option value="1">Велосипеды</option>
+                    <option value="11">- Для взрослых</option>
+                    <option value="12">- Для детей</option>
+                    <option value="13">- Двухколесные</option>
+                    <option value="14">- Трехколесные</option>
+                    <option value="15">- Горные</option>
+                    <option value="16">- Складные</option>
+                    <option value="2">Самокаты</option>
+                    <option value="21">- Для взрослых</option>
+                    <option value="22">- Для детей</option>
+                    <option value="23">- Двухколесные</option>
+                    <option value="24">- Трехколесные</option>
+                    <option value="25">- Складные</option>
+                    <option value="26">- Электросамокаты</option>
+                    <option value="6">Прочие товары</option>
+                    <option value="63">- Аксессуары</option>
+                    <option value="64">- Запчасти</option>
+                  </select>
+                </div><!-- End .select-custom -->
+                <button class="btn" type="submit"><i class="icon-search-3"></i></button>
+              </div><!-- End .header-search-wrapper -->
+            </form>
+          </div>
+
+          {% include 'included/menu_dropdown_cart.html' %}
+        </div>
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="col-lg-4">
+        <div class="service-widget">
+          <i class="service-icon icon-shipping"></i>
+          <div class="service-content">
+            <h3 class="service-title">Бесплатная доставка и возврат</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="service-widget">
+          <i class="service-icon icon-money"></i>
+          <div class="service-content">
+            <h3 class="service-title">Гарантия возврата денег</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="service-widget">
+          <i class="service-icon icon-support"></i>
+          <div class="service-content">
+            <h3 class="service-title">online поддержка 24/7</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header><!-- End .header -->
