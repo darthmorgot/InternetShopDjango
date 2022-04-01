@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+  <nav aria-label="breadcrumb" class="breadcrumb-nav mt-0">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Контакты</li>
+      </ol>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Связаться с нами</h1>
+    </div><!-- End .container -->
+  </div><!-- End .page-header -->
+
+  <div class="container">
+    <div id="map"></div><!-- End #map -->
+
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="light-title">Напишите <strong>Нам</strong></h2>
+
+        <form action="#">
+          <div class="form-group required-field">
+            <label for="contact-name">Имя</label>
+            <input type="text" class="form-control" id="contact-name" name="contact-name" required>
+          </div><!-- End .form-group -->
+
+          <div class="form-group required-field">
+            <label for="contact-email">Email</label>
+            <input type="email" class="form-control" id="contact-email" name="contact-email" required>
+          </div><!-- End .form-group -->
+
+          <div class="form-group">
+            <label for="contact-phone">Телефон</label>
+            <input type="tel" class="form-control" id="contact-phone" name="contact-phone">
+          </div><!-- End .form-group -->
+
+          <div class="form-group required-field">
+            <label for="contact-message">Что думаете об этом?</label>
+            <textarea cols="30" rows="1" id="contact-message" class="form-control" name="contact-message"
+                      required></textarea>
+          </div><!-- End .form-group -->
+
+          <div class="form-footer">
+            <button type="submit" class="btn btn-primary">Отправить</button>
+          </div><!-- End .form-footer -->
+        </form>
+      </div><!-- End .col-md-8 -->
+
+      <div class="col-md-4">
+        <h2 class="light-title">Контактные <strong>данные</strong></h2>
+
+        <div class="contact-info">
+          <div>
+            <i class="icon-phone"></i>
+            <p><a href="tel:">8(4212) 72-03-20</a></p>
+            <p><a href="tel:">8(4212) 72-32-03</a></p>
+          </div>
+          <div>
+            <i class="icon-mobile"></i>
+            <p><a href="tel:">+7 901-123-3922</a></p>
+            <p><a href="tel:">+7 902-123-3928</a></p>
+          </div>
+          <div>
+            <i class="icon-mail-alt"></i>
+            <p><a href="mailto:#">velosamshop@gmail.com</a></p>
+            <p><a href="mailto:#">velosamshop@yandex.ru</a></p>
+          </div>
+          <div>
+            <i class="icon-skype"></i>
+            <p>velosamshop_skype</p>
+            <p>velosam_skype</p>
+          </div>
+        </div><!-- End .contact-info -->
+      </div><!-- End .col-md-4 -->
+    </div><!-- End .row -->
+  </div><!-- End .container -->
+
+</main><!-- End .main -->
+{% endblock %}
+
+<!-- Yandex maps -->
+<!-- добавить в конец head -->
+{% block yandex_maps_top %}
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=036298c2-2a26-4f9c-9cb9-64691ba65608"
+        type="text/javascript"></script>
+{% endblock %}
+
+<!-- добавить в конец body -->
+{% block yandex_maps_bottom %}
+<script type="text/javascript">
+  ymaps.ready(init);
+  var myMap;
+
+  function init() {
+    myMap = new ymaps.Map("map", {
+      center: [48.48230916240944, 135.07202358758627], // Координаты центра карты
+      zoom: 15 // Маштаб карты
+    });
+    myMap.controls.add(
+        new ymaps.control.ZoomControl()  // Добавление элемента управления картой
+    );
+    myMap.controls
+        .remove('trafficControl') // Удаление элемента управления картой
+        .remove('typeSelector')
+        .remove('scaleLine')
+        .remove('smallZoomControl')
+        .remove('zoomControl')
+        .remove('searchControl')
+        .remove('mapTools');
+    myPlacemark = new ymaps.Placemark(
+        [48.48230916240944, 135.07202358758627], // Координаты метки объекта
+        {}, // Подсказка метки
+        {preset: "twirl#bicycleIcon"} // Тип метки
+    );
+    myMap.geoObjects.add(myPlacemark); // Добавление метки
+    // myPlacemark.balloon.open(); // Открытие подсказки метки
+  };
+</script>
+{% endblock %}
