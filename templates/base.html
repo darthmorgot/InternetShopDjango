@@ -33,6 +33,9 @@
   <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/fontawesome-free/css/all.min.css' %}">
+
+  <!-- Yandex maps -->
+  {% block yandex_maps_top %}{% endblock %}
 </head>
 <body>
 <div class="page-wrapper">
@@ -63,5 +66,8 @@
 
 <!-- Main JS File -->
 <script src="{% static 'js/main.min.js' %}"></script>
+
+<!-- Yandex maps -->
+{% block yandex_maps_bottom %}{% endblock %}
 </body>
 </html>
