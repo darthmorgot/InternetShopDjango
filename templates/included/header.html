@@ -41,7 +41,7 @@
                 <a href="{% url 'home' %}">Главная</a>
               </li>
               <li class="sf-with-ul">
-                <a href="catalog.html">Каталог</a>
+                <a href="{% url 'catalog' %}">Каталог</a>
                 {% include 'included/menu_list.html' %}
               </li>
             </ul>
@@ -59,20 +59,20 @@
                     <option value="1">Велосипеды</option>
                     <option value="11">- Для взрослых</option>
                     <option value="12">- Для детей</option>
-                    <option value="13">- Двухколесные</option>
-                    <option value="14">- Трехколесные</option>
                     <option value="15">- Горные</option>
+                    <option value="13">- Шоссейные</option>
                     <option value="16">- Складные</option>
+                    <option value="14">- BMX</option>
                     <option value="2">Самокаты</option>
-                    <option value="21">- Для взрослых</option>
-                    <option value="22">- Для детей</option>
-                    <option value="23">- Двухколесные</option>
-                    <option value="24">- Трехколесные</option>
-                    <option value="25">- Складные</option>
-                    <option value="26">- Электросамокаты</option>
+                    <option value="21">- Детские 2-колесные</option>
+                    <option value="22">- Детские 3-колесные</option>
+                    <option value="23">- Электрические</option>
+                    <option value="24">- Трюковые</option>
+                    <option value="25">- Тридеры</option>
                     <option value="6">Прочие товары</option>
                     <option value="63">- Аксессуары</option>
                     <option value="64">- Запчасти</option>
+                    <option value="64">- Инструменты</option>
                   </select>
                 </div><!-- End .select-custom -->
                 <button class="btn" type="submit"><i class="icon-search-3"></i></button>
