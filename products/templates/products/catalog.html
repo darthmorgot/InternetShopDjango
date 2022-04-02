@@ -1,0 +1,291 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+  <div class="category-banner">
+    <div class="container">
+      <div class="content-left">
+        <span>СУПЕР</span>
+        <h2>20% скидка</h2>
+        <h4 class="cross-txt">ВЕЛОСИПЕДЫ</h4>
+      </div>
+      <div class="content-center">
+        <img src="{% static 'images/banners/category_banner.png' %}" alt="Картинка баннера">
+      </div>
+      <div class="content-right">
+        <p>Летняя распродажа</p>
+        <button class="btn">Распродажа</button>
+      </div>
+    </div>
+  </div>
+
+  <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Каталог</li>
+      </ol>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row row-sm">
+      <div class="col-lg-10">
+        <nav class="toolbox">
+          <div class="toolbox-left">
+            <div class="toolbox-item toolbox-sort">
+              <div class="select-custom">
+                <select name="orderby" class="form-control">
+                  <option value="menu_order" selected="selected">Сортировка</option>
+                  <option value="popularity">Популярные</option>
+                  <option value="rating">По рейтингу</option>
+                  <option value="date">Новинки</option>
+                  <option value="price">Цена по возрастанию</option>
+                  <option value="price-desc">Цена по убыванию</option>
+                </select>
+              </div><!-- End .select-custom -->
+
+              <a href="#" class="sorter-btn" title="Set Ascending Direction">
+                <span class="sr-only">Установите направление по возрастанию</span>
+              </a>
+            </div><!-- End .toolbox-item -->
+          </div><!-- End .toolbox-left -->
+
+          <!-- Product counter -->
+          {% include 'products/product_counter.html' %}
+
+          <div class="layout-modes">
+            <a href="{% url 'catalog' %}" class="layout-btn btn-grid active" title="Сетка">
+              <i class="icon-mode-grid"></i>
+            </a>
+            <a href="category-list.html" class="layout-btn btn-list" title="Список">
+              <i class="icon-mode-list"></i>
+            </a>
+          </div><!-- End .layout-modes -->
+        </nav>
+
+        <div class="row row-sm">
+          {% for num in product_range %}
+          <div class="col-6 col-md-4 col-xl-3">
+            <div class="product-default inner-quickview inner-icon">
+              <figure>
+                <a href="product.html">
+                  <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
+                </a>
+                <div class="btn-icon-group">
+                  <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal"
+                          title="Добавить в корзину">
+                    <i class="icon-bag"></i>
+                  </button>
+                </div>
+                <a href="{% url 'popup' %}" class="btn-quickview">Быстрый просмотр</a>
+              </figure>
+              <div class="product-details">
+                <div class="category-wrap">
+                  <div class="category-list">
+                    <a href="category.html" class="product-category">Категория</a>
+                  </div>
+                  <a href="#" class="btn-icon-wish"><i class="icon-heart"></i></a>
+                </div>
+                <h2 class="product-title">
+                  <a href="product.html">Товар {{ num }}</a>
+                </h2>
+                <div class="ratings-container">
+                  <div class="product-ratings">
+                    <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                  </div><!-- End .product-ratings -->
+                </div><!-- End .product-container -->
+                <div class="price-box">
+                  <span class="product-price">4900</span><span>&nbsp;руб.</span>
+                </div><!-- End .price-box -->
+              </div><!-- End .product-details -->
+            </div>
+          </div>
+          {% endfor %}
+        </div><!-- End .row -->
+
+        <nav class="toolbox toolbox-pagination">
+          <!-- Product counter -->
+          {% include 'products/product_counter.html' %}
+
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a class="page-link page-link-btn" href="#"><i class="icon-angle-left"></i></a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><span>...</span></li>
+            <li class="page-item"><a class="page-link" href="#">15</a></li>
+            <li class="page-item">
+              <a class="page-link page-link-btn" href="#"><i class="icon-angle-right"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div><!-- End .col-lg-9 -->
+
+      <aside class="sidebar-shop col-lg-2 order-lg-first">
+        <div class="sidebar-wrapper">
+          <div class="widget">
+            <h3 class="widget-title">
+              <a data-toggle="collapse" href="#widget-body-1" role="button" aria-expanded="true"
+                 aria-controls="widget-body-1">Велосипеды</a>
+            </h3>
+
+            <div class="collapse show" id="widget-body-1">
+              <div class="widget-body">
+                <ul class="cat-list">
+                  <li><a href="#">Для взрослых</a></li>
+                  <li><a href="#">Для детей</a></li>
+                  <li><a href="#">Горные</a></li>
+                  <li><a href="#">Шоссейные</a></li>
+                  <li><a href="#">Складные</a></li>
+                  <li><a href="#">BMX</a></li>
+                </ul>
+              </div><!-- End .widget-body -->
+            </div><!-- End .collapse -->
+          </div><!-- End .widget -->
+
+          <div class="widget">
+            <h3 class="widget-title">
+              <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="true"
+                 aria-controls="widget-body-2">Самокаты</a>
+            </h3>
+
+            <div class="collapse show" id="widget-body-2">
+              <div class="widget-body">
+                <ul class="cat-list">
+                  <li><a href="#">Детские 2-колесные</a></li>
+                  <li><a href="#">Детские 3-колесные</a></li>
+                  <li><a href="#">Электрические</a></li>
+                  <li><a href="#">Трюковые</a></li>
+                  <li><a href="#">Тридеры</a></li>
+                </ul>
+              </div><!-- End .widget-body -->
+            </div><!-- End .collapse -->
+          </div><!-- End .widget -->
+
+          <div class="widget">
+            <h3 class="widget-title">
+              <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="false"
+                 aria-controls="widget-body-3" class="collapsed">Аксессуары</a>
+            </h3>
+
+            <div class="collapse" id="widget-body-3">
+              <div class="widget-body">
+                <ul class="cat-list">
+                  <li><a href="#">Велозащита</a></li>
+                  <li><a href="#">Держатели</a></li>
+                  <li><a href="#">Велокомпьютер</a></li>
+                  <li><a href="#">Зеркала</a></li>
+                  <li><a href="#">Корзины</a></li>
+                  <li><a href="#">Сумки</a></li>
+                  <li><a href="#">Багажники</a></li>
+                  <li><a href="#">Насосы</a></li>
+                  <li><a href="#">Фонари</a></li>
+                </ul>
+              </div><!-- End .widget-body -->
+            </div><!-- End .collapse -->
+          </div><!-- End .widget -->
+
+          <div class="widget">
+            <h3 class="widget-title">
+              <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="false"
+                 aria-controls="widget-body-4" class="collapsed">Запчасти</a>
+            </h3>
+
+            <div class="collapse" id="widget-body-4">
+              <div class="widget-body">
+                <ul class="cat-list">
+                  <li><a href="#">Колеса</a></li>
+                  <li><a href="#">Педали</a></li>
+                  <li><a href="#">Вилки</a></li>
+                  <li><a href="#">Звездочки</a></li>
+                  <li><a href="#">Цепи</a></li>
+                  <li><a href="#">Тормоза</a></li>
+                  <li><a href="#">Переключение скоростей</a></li>
+                  <li><a href="#">Рули</a></li>
+                  <li><a href="#">Седла</a></li>
+                </ul>
+              </div><!-- End .widget-body -->
+            </div><!-- End .collapse -->
+          </div><!-- End .widget -->
+
+          <div class="widget">
+            <h3 class="widget-title">
+              <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="false"
+                 aria-controls="widget-body-5" class="collapsed">Инструменты</a>
+            </h3>
+
+            <div class="collapse" id="widget-body-5">
+              <div class="widget-body">
+                <ul class="cat-list">
+                  <li><a href="#">Ключи</a></li>
+                  <li><a href="#">Чистка и уход</a></li>
+                  <li><a href="#">Смазки</a></li>
+                </ul>
+              </div><!-- End .widget-body -->
+            </div><!-- End .collapse -->
+          </div><!-- End .widget -->
+
+          <div class="widget">
+            <h3 class="widget-title">
+              <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
+                 aria-controls="widget-body-6">Цена</a>
+            </h3>
+
+            <div class="collapse show" id="widget-body-6">
+              <div class="widget-body">
+                <form action="#">
+                  <div class="price-slider-wrapper">
+                    <div id="price-slider"></div><!-- End #price-slider -->
+                  </div><!-- End .price-slider-wrapper -->
+
+                  <div class="filter-price-action">
+                    <button type="submit" class="btn btn-primary">Применить</button>
+
+                    <div class="filter-price-text">
+                      Цена:
+                      <span id="filter-price-range"></span>
+                    </div><!-- End .filter-price-text -->
+                  </div><!-- End .filter-price-action -->
+                </form>
+              </div><!-- End .widget-body -->
+            </div><!-- End .collapse -->
+          </div><!-- End .widget -->
+
+          <div class="widget">
+            <h3 class="widget-title">
+              <a data-toggle="collapse" href="#widget-body-4" role="button" aria-expanded="false"
+                 aria-controls="widget-body-7" class="collapsed">Производитель</a>
+            </h3>
+
+            <div class="collapse" id="widget-body-7">
+              <div class="widget-body">
+                <ul class="cat-list">
+                  <li><a href="#">Марка 1</a></li>
+                  <li><a href="#">Марка 2</a></li>
+                  <li><a href="#">Марка 3</a></li>
+                  <li><a href="#">Марка 4</a></li>
+                  <li><a href="#">Марка 5</a></li>
+                </ul>
+              </div><!-- End .widget-body -->
+            </div><!-- End .collapse -->
+          </div><!-- End .widget -->
+
+        </div><!-- End .sidebar-wrapper -->
+      </aside><!-- End .col-lg-3 -->
+    </div><!-- End .row -->
+  </div><!-- End .container -->
+
+  <div class="mb-5"></div><!-- margin -->
+</main><!-- End .main -->
+{% endblock %}
+
+{% block add_cart_modal %}
+{% include 'included/add_cart_modal.html' %}
+{% endblock %}
