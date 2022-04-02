@@ -12,7 +12,12 @@
 
 .footer .widget .widget-content .col-title {
   padding-left: 0;
-  font-size: 1.6rem;
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+.footer .widget .widget-content p, .footer .widget .widget-content a {
+  font-size: 1em;
 }
 
 .footer .widget ul {
