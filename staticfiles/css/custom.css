@@ -35,3 +35,15 @@
 .page-header.page-header-bg {
   background-image: url('../images/banners/banner-top.jpg');
 }
+
+.filter-price-action {
+  display: block;
+}
+
+.filter-price-action .btn {
+  margin-top: 2rem;
+}
+
+.filter-price-text {
+  font-size: 1.5rem;
+}
