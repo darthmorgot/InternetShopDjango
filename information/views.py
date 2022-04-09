@@ -19,3 +19,12 @@ class ContactPageView(TemplateView):
         context['title'] = 'Контакты'
         context['cart_range'] = range(1, 3)
         return context
+
+
+class PageDevelopmentView(TemplateView):
+    template_name = 'information/page_development.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Страница в разработке'
+        return context
