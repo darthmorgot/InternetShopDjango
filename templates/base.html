@@ -6,25 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>{{ title }} :: ВелоСам</title>
+  <title>{% if title %}{{ title }} :: ВелоСам{% else %}{% block title %}{% endblock %} :: ВелоСам{% endif %}</title>
 
-  <meta name="keywords" content="HTML5 Template"/>
-  <meta name="description" content="Porto - Bootstrap eCommerce Template">
+  <meta name="keywords" content="VeloSam, bikes, online store"/>
+  <meta name="description" content="VeloSam - online store">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{% static 'images/icons/favicon.png' %}">
-
-  <script type="text/javascript">
-    WebFontConfig = {
-      google: {families: ['Open+Sans:300,400,600,700,800', 'Poppins:300,400,500,600,700']}
-    };
-    (function (d) {
-      let wf = d.createElement('script'), s = d.scripts[0];
-      wf.src = "{% static 'js/webfont.js' %}";
-      wf.async = true;
-      s.parentNode.insertBefore(wf, s);
-    })(document);
-  </script>
 
   <!-- Plugins CSS File -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -32,7 +20,7 @@
   <!-- Main CSS File -->
   <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'vendor/fontawesome-free/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendor/fontawesome-free/css/all.min.css' %}">
 
   <!-- Yandex maps -->
   {% block yandex_maps_top %}{% endblock %}
@@ -63,7 +51,7 @@
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'js/plugins.min.js' %}"></script>
 <script src="{% static 'js/nouislider.min.js' %}"></script>
-<script src="{% static 'js/plugins/isotope-docs.min.js' %}"></script>
+<script src="{% static 'js/isotope-docs.min.js' %}"></script>
 
 <!-- Main JS File -->
 <script src="{% static 'js/main.min.js' %}"></script>
