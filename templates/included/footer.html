@@ -88,21 +88,21 @@
             <div class="widget">
               <div class="widget-content row row-sm">
                 <ul class="col-md-6 col-sm-6">
-                  <li><a href="#" class="col-title">Велосипеды</a></li>
-                  <li><a href="#">Для взрослых</a></li>
-                  <li><a href="#">Для детей</a></li>
-                  <li><a href="#">Горные</a></li>
-                  <li><a href="#">Шоссейные</a></li>
-                  <li><a href="#">Складные</a></li>
-                  <li><a href="#">BMX</a></li>
+                  <li><a href="{% url 'catalog' %}" class="col-title">Велосипеды</a></li>
+                  <li><a href="{% url 'catalog' %}">Для взрослых</a></li>
+                  <li><a href="{% url 'catalog' %}">Для детей</a></li>
+                  <li><a href="{% url 'catalog' %}">Горные</a></li>
+                  <li><a href="{% url 'catalog' %}">Шоссейные</a></li>
+                  <li><a href="{% url 'catalog' %}">Складные</a></li>
+                  <li><a href="{% url 'catalog' %}">BMX</a></li>
                 </ul>
                 <ul class="col-md-6 col-sm-6">
-                  <li><a href="#" class="col-title">Самокаты</a></li>
-                  <li><a href="#">Детские 2-колесные</a></li>
-                  <li><a href="#">Детские 3-колесные</a></li>
-                  <li><a href="#">Электрические</a></li>
-                  <li><a href="#">Трюковые</a></li>
-                  <li><a href="#">Тридеры</a></li>
+                  <li><a href="{% url 'catalog' %}" class="col-title">Самокаты</a></li>
+                  <li><a href="{% url 'catalog' %}">Детские 2-колесные</a></li>
+                  <li><a href="{% url 'catalog' %}">Детские 3-колесные</a></li>
+                  <li><a href="{% url 'catalog' %}">Электрические</a></li>
+                  <li><a href="{% url 'catalog' %}">Трюковые</a></li>
+                  <li><a href="{% url 'catalog' %}">Тридеры</a></li>
                 </ul>
               </div>
             </div>
@@ -111,19 +111,18 @@
             <div class="widget">
               <div class="widget-content row row-sm">
                 <ul class="col-md-6 col-sm-6">
-                  <li><a href="#" class="col-title">Прочие товары</a></li>
-                  <li><a href="#">Аксессуары</a></li>
-                  <li><a href="#">Запчасти</a></li>
-                  <li><a href="#">Инструменты</a></li>
+                  <li><a href="{% url 'catalog' %}" class="col-title">Прочие товары</a></li>
+                  <li><a href="{% url 'catalog' %}">Аксессуары</a></li>
+                  <li><a href="{% url 'catalog' %}">Запчасти</a></li>
+                  <li><a href="{% url 'catalog' %}">Инструменты</a></li>
                 </ul>
                 <ul class="col-md-6 col-sm-6">
-                  <li><a href="#" class="col-title">Аккаунт</a></li>
+                  <li><a class="col-title">Аккаунт</a></li>
                   <li><a href="dashboard.html">Личный кабинет</a></li>
                   <li><a href="#">Отслеживание заказа</a></li>
                   <li><a href="#">Поддержка</a></li>
                   <li><a href="#">Способы оплаты</a></li>
                   <li><a href="#">Способы доставки</a></li>
-                  <li><a href="#">ЧаВо</a></li>
                 </ul>
               </div>
             </div>
@@ -135,9 +134,9 @@
                   <li><a class="col-title">Особенности</a></li>
                   <li><a href="{% url 'about' %}">Про магазин</a></li>
                   <li><a href="{% url 'contact' %}">Контакты</a></li>
-                  <li><a href="#">Условия и положения</a></li>
-                  <li><a href="#">Наши гарантии</a></li>
-                  <li><a href="#">Соглашение о <br>конфиденциальности</a></li>
+                  <li><a href="{% url 'page_development' %}">Условия и положения</a></li>
+                  <li><a href="{% url 'page_development' %}">Наши гарантии</a></li>
+                  <li><a href="{% url 'page_development' %}">Соглашение о <br>конфиденциальности</a></li>
                 </ul>
               </div>
             </div>
