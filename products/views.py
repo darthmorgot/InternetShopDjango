@@ -20,8 +20,8 @@ class HomePageView(TemplateView):
         return context
 
 
-class PopupPageView(TemplateView):
-    template_name = 'products/ajax/product_quick_view.html'
+class ProductQuickViewView(TemplateView):
+    template_name = 'products/popup/product_quick_view.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
