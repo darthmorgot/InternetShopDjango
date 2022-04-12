@@ -53,13 +53,13 @@
           </div><!-- End .toolbox-left -->
 
           <!-- Product counter -->
-          {% include 'products/product_counter.html' %}
+          {% include 'products/included/product_counter.html' %}
 
           <div class="layout-modes">
-            <a href="{% url 'catalog' %}" class="layout-btn btn-grid active" title="Сетка">
+            <a href="#" class="layout-btn btn-grid active" title="Сетка">
               <i class="icon-mode-grid"></i>
             </a>
-            <a href="category-list.html" class="layout-btn btn-list" title="Список">
+            <a href="#" class="layout-btn btn-list" title="Список">
               <i class="icon-mode-list"></i>
             </a>
           </div><!-- End .layout-modes -->
@@ -67,7 +67,7 @@
 
         <div class="row row-sm">
           {% for num in product_range %}
-          <div class="col-6 col-md-4 col-xl-3">
+          <div class="col-6 col-md-4 col-xl-3 product-grid">
             <div class="product-default inner-quickview inner-icon">
               <figure>
                 <a href="product.html">
@@ -79,7 +79,7 @@
                     <i class="icon-bag"></i>
                   </button>
                 </div>
-                <a href="{% url 'popup' %}" class="btn-quickview">Быстрый просмотр</a>
+                <a href="{% url 'quick_view' %}" class="btn-quickview">Быстрый просмотр</a>
               </figure>
               <div class="product-details">
                 <div class="category-wrap">
@@ -102,12 +102,48 @@
               </div><!-- End .product-details -->
             </div>
           </div>
+
+          <div class="col-6 col-sm-12 product-default left-details product-list product-hide">
+            <figure>
+              <a href="product.html">
+                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
+              </a>
+            </figure>
+            <div class="product-details">
+              <div class="category-list">
+                <a href="catalog.html" class="product-category">Категория</a>
+              </div>
+              <h2 class="product-title">
+                <a href="product.html">Товар {{ num }}</a>
+              </h2>
+              <div class="ratings-container">
+                <div class="product-ratings">
+                  <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                </div><!-- End .product-ratings -->
+              </div><!-- End .product-container -->
+              <p class="product-description">А ещё активно развивающиеся страны третьего мира и по сей день остаются
+                уделом либералов, которые жаждут быть разоблачены. Предприниматели в сети интернет объективно
+                рассмотрены соответствующими инстанциями. В целом, конечно, синтетическое тестирование прекрасно
+                подходит для реализации глубокомысленных рассуждений.</p>
+              <div class="price-box">
+                <span class="product-price">4900</span><span>&nbsp;руб.</span>
+              </div><!-- End .price-box -->
+              <div class="product-action">
+                <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
+                  <i class="icon-bag"></i>Добавить в корзину
+                </button>
+                <a href="{% url 'quick_view' %}" class="btn-quickview" title="Быстрый просмотр">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div><!-- End .product-details -->
+          </div>
           {% endfor %}
         </div><!-- End .row -->
 
         <nav class="toolbox toolbox-pagination">
           <!-- Product counter -->
-          {% include 'products/product_counter.html' %}
+          {% include 'products/included/product_counter.html' %}
 
           <ul class="pagination">
             <li class="page-item disabled">
@@ -286,5 +322,45 @@
 {% endblock %}
 
 {% block add_cart_modal %}
-{% include 'included/add_cart_modal.html' %}
+{% include 'products/included/add_cart_modal.html' %}
+{% endblock %}
+
+{% block product_grid_list %}
+<script>
+  (function () {
+    'use strict';
+
+    let modes = document.querySelector('.layout-modes');
+    let btnGrid = modes.querySelector('.btn-grid');
+    let btnList = modes.querySelector('.btn-list');
+
+    let productGrid = document.querySelectorAll('.product-grid');
+    let productList = document.querySelectorAll('.product-list');
+
+    modes.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      if (evt.target.classList.contains('icon-mode-grid')) {
+        switchButtonView(btnGrid, btnList);
+        switchProductView(productGrid, productList);
+      }
+      if (evt.target.classList.contains('icon-mode-list')) {
+        switchButtonView(btnList, btnGrid);
+        switchProductView(productList, productGrid);
+      }
+    });
+
+    function switchProductView(first, second) {
+      for (let i = 0; i < productGrid.length; i++) {
+        first[i].classList.remove('product-hide');
+        second[i].classList.add('product-hide');
+      }
+    }
+
+    function switchButtonView(first, second) {
+      first.classList.add('active');
+      second.classList.remove('active');
+    }
+
+  })();
+</script>
 {% endblock %}
