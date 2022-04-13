@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+  {% include 'included/breadcrumb.html' with page_name='Корзина' %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="cart-table-container">
+          <table class="table table-cart">
+            <thead>
+            <tr>
+              <th class="product-col">Товар</th>
+              <th class="price-col">Цена</th>
+              <th class="qty-col">Количество</th>
+              <th>Итого</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="product-row">
+              <td class="product-col">
+                <figure class="product-image-container">
+                  <a href="{% url 'product' %}" class="product-image">
+                    <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
+                  </a>
+                </figure>
+                <h2 class="product-title">
+                  <a href="{% url 'product' %}">Название товара</a>
+                </h2>
+              </td>
+              <td>1790 руб.</td>
+              <td>
+                <input class="vertical-quantity form-control" type="text">
+              </td>
+              <td>1790 руб.</td>
+            </tr>
+            <tr class="product-action-row">
+              <td colspan="4" class="clearfix">
+                <div class="float-right">
+                  <a href="#" title="Remove product" class="btn-remove">
+                    <span class="sr-only">Remove</span>
+                  </a>
+                </div><!-- End .float-right -->
+              </td>
+            </tr>
+
+            <tr class="product-row">
+              <td class="product-col">
+                <figure class="product-image-container">
+                  <a href="{% url 'product' %}" class="product-image">
+                    <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
+                  </a>
+                </figure>
+                <h2 class="product-title">
+                  <a href="{% url 'product' %}">Название товара</a>
+                </h2>
+              </td>
+              <td>890 руб.</td>
+              <td>
+                <input class="vertical-quantity form-control" type="text">
+              </td>
+              <td>890 руб.</td>
+            </tr>
+            <tr class="product-action-row">
+              <td colspan="4" class="clearfix">
+                <div class="float-right">
+                  <a href="#" title="Remove product" class="btn-remove">
+                    <span class="sr-only">Remove</span>
+                  </a>
+                </div><!-- End .float-right -->
+              </td>
+            </tr>
+            </tbody>
+
+            <tfoot>
+            <tr>
+              <td colspan="4" class="clearfix">
+                <div class="float-left">
+                  <a href="{% url 'catalog' %}" class="btn btn-outline-secondary">Продолжить покупки</a>
+                </div><!-- End .float-left -->
+
+                <div class="float-right">
+                  <a href="cart.html" class="btn btn-outline-secondary btn-clear-cart">Очистить</a>
+                  <a href="cart.html" class="btn btn-outline-secondary btn-update-cart">Обновить</a>
+                </div><!-- End .float-right -->
+              </td>
+            </tr>
+            </tfoot>
+          </table>
+        </div><!-- End .cart-table-container -->
+
+        <div class="cart-discount">
+          <h4>Ввести промокод</h4>
+          <form action="#">
+            <div class="input-group">
+              <input type="text" class="form-control form-control-sm" placeholder="Введите промокод" required>
+              <div class="input-group-append">
+                <button class="btn btn-sm btn-primary" type="submit">Применить</button>
+              </div>
+            </div><!-- End .input-group -->
+          </form>
+        </div><!-- End .cart-discount -->
+      </div><!-- End .col-lg-8 -->
+
+      <div class="col-lg-4">
+        <div class="cart-summary">
+          <h3>Результат</h3>
+
+          <table class="table table-totals">
+            <tfoot>
+            <tr>
+              <td>Стоимость</td>
+              <td>2680 руб.</td>
+            </tr>
+            </tfoot>
+          </table>
+
+          <div class="checkout-methods">
+            <a href="checkout-shipping.html" class="btn btn-block btn-sm btn-primary">Перейти к оформлению</a>
+            <a href="checkout-shipping-2.html" class="btn btn-link btn-block">Оформить по ранее указанному адресу</a>
+          </div><!-- End .checkout-methods -->
+        </div><!-- End .cart-summary -->
+      </div><!-- End .col-lg-4 -->
+    </div><!-- End .row -->
+  </div><!-- End .container -->
+</main><!-- End .main -->
+{% endblock %}
