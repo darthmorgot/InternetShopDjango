@@ -9,8 +9,8 @@
           <a href="cart.html">
             <button class="btn-primary">Перейти в корзину</button>
           </a>
-          <a href="#">
-            <button class="btn-primary" data-dismiss="modal">Продолжить покупки</button>
+          <a href="{% if link %}{{ link }}{% else %}{% url 'catalog' %}{% endif %}">
+            <button class="btn-primary" {{ dismiss }}>Продолжить покупки</button>
           </a>
         </div>
       </div>
