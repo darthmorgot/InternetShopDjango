@@ -3,14 +3,7 @@
 
 {% block content %}
 <main class="main">
-  <nav aria-label="breadcrumb" class="breadcrumb-nav mt-0">
-    <div class="container">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Контакты</li>
-      </ol>
-    </div>
-  </nav>
+  {% include 'included/breadcrumb.html' with page_name='Контакты' %}
 
   <div class="page-header">
     <div class="container">

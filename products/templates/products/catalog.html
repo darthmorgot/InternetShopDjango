@@ -20,14 +20,7 @@
     </div>
   </div>
 
-  <nav aria-label="breadcrumb" class="breadcrumb-nav">
-    <div class="container">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{% url 'home' %}">Главная</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Каталог</li>
-      </ol>
-    </div>
-  </nav>
+  {% include 'included/breadcrumb.html' with page_name='Каталог' %}
 
   <div class="container">
     <div class="row row-sm">
