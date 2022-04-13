@@ -5,60 +5,63 @@
       <div class="product-slider-container product-item">
         <div class="product-single-carousel owl-carousel owl-theme">
           <div class="product-item">
-            <img class="product-single-image" src="{% static 'images/products/zoom/product-1.jpg' %}"
-                 data-zoom-image="{% static 'images/products/zoom/product-1-big.jpg' %}"/>
+            <img class="product-single-image" src="{% static 'images/no-image.png' %}"
+                 data-zoom-image="{% static 'images/no-image.png' %}"/>
           </div>
           <div class="product-item">
-            <img class="product-single-image" src="{% static 'images/products/zoom/product-2.jpg' %}"
-                 data-zoom-image="{% static 'images/products/zoom/product-2-big.jpg' %}"/>
+            <img class="product-single-image" src="{% static 'images/no-image.png' %}"
+                 data-zoom-image="{% static 'images/no-image.png' %}"/>
           </div>
           <div class="product-item">
-            <img class="product-single-image" src="{% static 'images/products/zoom/product-3.jpg' %}"
-                 data-zoom-image="{% static 'images/products/zoom/product-3-big.jpg' %}"/>
+            <img class="product-single-image" src="{% static 'images/no-image.png' %}"
+                 data-zoom-image="{% static 'images/no-image.png' %}"/>
           </div>
           <div class="product-item">
-            <img class="product-single-image" src="{% static 'images/products/zoom/product-4.jpg' %}"
-                 data-zoom-image="{% static 'images/products/zoom/product-4-big.jpg' %}"/>
+            <img class="product-single-image" src="{% static 'images/no-image.png' %}"
+                 data-zoom-image="{% static 'images/no-image.png' %}"/>
           </div>
         </div>
         <!-- End .product-single-carousel -->
       </div>
       <div class="prod-thumbnail row owl-dots" id='carousel-custom-dots'>
         <div class="col-3 owl-dot">
-          <img src="{% static 'images/products/zoom/product-1.jpg' %}"/>
+          <img src="{% static 'images/no-image.png' %}"/>
         </div>
         <div class="col-3 owl-dot">
-          <img src="{% static 'images/products/zoom/product-2.jpg' %}"/>
+          <img src="{% static 'images/no-image.png' %}"/>
         </div>
         <div class="col-3 owl-dot">
-          <img src="{% static 'images/products/zoom/product-3.jpg' %}"/>
+          <img src="{% static 'images/no-image.png' %}"/>
         </div>
         <div class="col-3 owl-dot">
-          <img src="{% static 'images/products/zoom/product-4.jpg' %}"/>
+          <img src="{% static 'images/no-image.png' %}"/>
         </div>
       </div>
     </div><!-- End .col-lg-7 -->
 
     <div class="col-lg-6 col-md-6">
       <div class="product-single-details">
-        <h1 class="product-title">Silver Porto Headset</h1>
+        <h1 class="product-title">Название товара</h1>
 
         <div class="ratings-container">
           <div class="product-ratings">
-            <span class="ratings" style="width:60%"></span><!-- End .ratings -->
+            <span class="ratings" style="width:100%"></span><!-- End .ratings -->
           </div><!-- End .product-ratings -->
 
-          <a href="#" class="rating-link">( 6 Reviews )</a>
+          <a href="{% url 'page_development' %}" class="rating-link">( 6 Reviews )</a>
         </div><!-- End .product-container -->
 
         <div class="price-box">
-          <span class="old-price">$81.00</span>
-          <span class="product-price">$101.00</span>
+          <span class="old-price">5100</span><span>руб.</span>
+          <span class="product-price">4100</span><span>руб.</span>
         </div><!-- End .price-box -->
 
         <div class="product-desc">
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non.</p>
+          <p>Постоянное информационно-пропагандистское обеспечение нашей деятельности говорит о возможностях анализа
+            существующих паттернов поведения. Значимость этих проблем настолько очевидна, что разбавленное изрядной
+            долей эмпатии, рациональное мышление обеспечивает актуальность своевременного выполнения сверхзадачи. А ещё
+            представители современных социальных резервов, вне зависимости от их уровня, должны быть описаны максимально
+            подробно.</p>
         </div><!-- End .product-desc -->
 
         <div class="product-action">
@@ -67,7 +70,7 @@
           </div><!-- End .product-single-qty -->
 
           <a href="cart.html" class="paction add-cart" title="Add to Cart">
-            Add to Cart
+            Добавить в корзину
           </a>
         </div><!-- End .product-action -->
 
