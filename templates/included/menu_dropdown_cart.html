@@ -1,6 +1,6 @@
 {% load static %}
           <div class="dropdown cart-dropdown">
-            <a href="cart.html" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
+            <a href="{% url 'cart' %}" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
                aria-expanded="false" data-display="static">
               <i class="minicart-icon"></i>
               <span class="cart-count">2</span>
@@ -11,7 +11,7 @@
                 <div class="dropdown-cart-header">
                   <span>2</span>
                   <span>&nbsp;шт.</span>
-                  <a href="cart.html">Просмотр корзины</a>
+                  <a href="{% url 'cart' %}">Просмотр корзины</a>
                 </div><!-- End .dropdown-cart-header -->
 
                 <div class="dropdown-cart-products">
@@ -19,7 +19,7 @@
                   <div class="product">
                     <div class="product-details">
                       <h4 class="product-title">
-                        <a href="product.html">Товар {{ num }}</a>
+                        <a href="{% url 'product' %}">Товар {{ num }}</a>
                       </h4>
                       <span class="cart-product-info">
                         <span class="cart-product-qty">1</span>
@@ -28,7 +28,7 @@
                     </div><!-- End .product-details -->
 
                     <figure class="product-image-container">
-                      <a href="product.html" class="product-image">
+                      <a href="{% url 'product' %}" class="product-image">
                         <img src="{% static 'images/no-image.png' %}" alt="Товар в корзине">
                       </a>
                       <a href="#" class="btn-remove" title="Удалить товар"><i class="icon-retweet"></i></a>
