@@ -32,7 +32,7 @@
           {% for num in product_range %}
           <div class="product-default inner-quickview inner-icon center-details">
             <figure>
-              <a href="product.html">
+              <a href="{% url 'product' %}">
                 <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
               </a>
               <div class="label-group">
@@ -48,11 +48,11 @@
             <div class="product-details">
               <div class="category-wrap">
                 <div class="category-list">
-                  <a href="category.html" class="product-category">Велосипеды</a>
+                  <a href="{% url 'catalog' %}" class="product-category">Категория</a>
                 </div>
               </div>
               <h2 class="product-title">
-                <a href="product.html">Велосипед {{ num }}</a>
+                <a href="{% url 'product' %}">Товар {{ num }}</a>
               </h2>
               <div class="ratings-container">
                 <div class="product-ratings">
@@ -81,7 +81,7 @@
       {% block product-panel-bottom %}
       <section class="product-panel">
         <div class="section-title">
-          <h2>Аксессуары и запчасти</h2>
+          <h2>Сопутствующие товары</h2>
         </div>
         <div class="owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
           'margin': 4,
@@ -104,7 +104,7 @@
           {% for num in product_range %}
           <div class="product-default inner-quickview inner-icon center-details">
             <figure>
-              <a href="product.html">
+              <a href="{% url 'product' %}">
                 <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
               </a>
               <div class="btn-icon-group">
@@ -117,11 +117,11 @@
             <div class="product-details">
               <div class="category-wrap">
                 <div class="category-list">
-                  <a href="category.html" class="product-category">Аксессуары и запчасти</a>
+                  <a href="{% url 'catalog' %}" class="product-category">Категория</a>
                 </div>
               </div>
               <h2 class="product-title">
-                <a href="product.html">Товар {{ num }}</a>
+                <a href="{% url 'product' %}">Товар {{ num }}</a>
               </h2>
               <div class="ratings-container">
                 <div class="product-ratings">

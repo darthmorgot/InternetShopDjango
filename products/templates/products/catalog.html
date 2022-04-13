@@ -70,7 +70,7 @@
           <div class="col-6 col-md-4 col-xl-3 product-grid">
             <div class="product-default inner-quickview inner-icon">
               <figure>
-                <a href="product.html">
+                <a href="{% url 'product' %}">
                   <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
                 </a>
                 <div class="btn-icon-group">
@@ -86,10 +86,9 @@
                   <div class="category-list">
                     <a href="category.html" class="product-category">Категория</a>
                   </div>
-                  <a href="#" class="btn-icon-wish"><i class="icon-heart"></i></a>
                 </div>
                 <h2 class="product-title">
-                  <a href="product.html">Товар {{ num }}</a>
+                  <a href="{% url 'product' %}">Товар {{ num }}</a>
                 </h2>
                 <div class="ratings-container">
                   <div class="product-ratings">
@@ -105,7 +104,7 @@
 
           <div class="col-6 col-sm-12 product-default left-details product-list product-hide">
             <figure>
-              <a href="product.html">
+              <a href="{% url 'product' %}">
                 <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
               </a>
             </figure>
@@ -114,7 +113,7 @@
                 <a href="catalog.html" class="product-category">Категория</a>
               </div>
               <h2 class="product-title">
-                <a href="product.html">Товар {{ num }}</a>
+                <a href="{% url 'product' %}">Товар {{ num }}</a>
               </h2>
               <div class="ratings-container">
                 <div class="product-ratings">
@@ -322,7 +321,7 @@
 {% endblock %}
 
 {% block add_cart_modal %}
-{% include 'products/included/add_cart_modal.html' %}
+{% include 'products/included/add_cart_modal.html' with link='#' dismiss='data-dismiss="modal"' %}
 {% endblock %}
 
 {% block product_grid_list %}
