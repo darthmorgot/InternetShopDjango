@@ -56,3 +56,8 @@
   padding-top: 0;
   border-top: none;
 }
+
+.checkout-methods .btn+.btn {
+  padding-left: 0;
+  padding-right: 0;
+}
