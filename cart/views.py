@@ -9,3 +9,13 @@ class CartPageView(TemplateView):
         context['title'] = 'Корзина'
         context['cart_range'] = range(1, 3)
         return context
+
+
+class ShippingPageView(TemplateView):
+    template_name = 'cart/shipping.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Оформление'
+        context['cart_range'] = range(1, 3)
+        return context
