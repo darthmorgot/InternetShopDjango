@@ -2,8 +2,8 @@
   'use strict';
 
   ymaps.ready(init);
-  var myMap;
-  var myPlacemark;
+  let myMap;
+  let myPlacemark;
 
   function init() {
     myMap = new ymaps.Map("map", {
@@ -28,6 +28,6 @@
     );
     myMap.geoObjects.add(myPlacemark); // Добавление метки
     // myPlacemark.balloon.open(); // Открытие подсказки метки
-  };
+  }
 
 })();
