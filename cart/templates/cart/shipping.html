@@ -98,81 +98,12 @@
           </li>
 
           <li>
-            <div class="checkout-step-shipping">
-              <h2 class="step-title">Способы доставки</h2>
-
-              <table class="table table-step-shipping">
-                <tbody>
-                  <tr>
-                    <td><input type="radio" name="shipping-method" value="tc"></td>
-                    <td>Транспортная компания</td>
-                    <td><strong>2000 руб.</strong></td>
-                  </tr>
-
-                  <tr>
-                    <td><input type="radio" name="shipping-method" value="post"></td>
-                    <td>Почта России</td>
-                    <td><strong>500 руб.</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div><!-- End .checkout-step-shipping -->
+{% include 'cart/included/shipping_method.html' %}
           </li>
         </ul>
       </div><!-- End .col-lg-8 -->
 
-      <div class="col-lg-4">
-        <div class="order-summary">
-          <h3>Корзина</h3>
-
-          <h4>
-            <a data-toggle="collapse" href="#order-cart-section" class="collapsed" role="button" aria-expanded="false"
-               aria-controls="order-cart-section">2 товара</a>
-          </h4>
-
-          <div class="collapse" id="order-cart-section">
-            <table class="table table-mini-cart">
-              <tbody>
-              <tr>
-                <td class="product-col">
-                  <figure class="product-image-container">
-                    <a href="{% url 'product' %}" class="product-image">
-                      <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-                    </a>
-                  </figure>
-                  <div>
-                    <h2 class="product-title">
-                      <a href="{% url 'product' %}">Название товара</a>
-                    </h2>
-
-                    <span class="product-qty">Количество: 1</span>
-                  </div>
-                </td>
-                <td class="price-col">1790 руб.</td>
-              </tr>
-
-              <tr>
-                <td class="product-col">
-                  <figure class="product-image-container">
-                    <a href="{% url 'product' %}" class="product-image">
-                      <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-                    </a>
-                  </figure>
-                  <div>
-                    <h2 class="product-title">
-                      <a href="{% url 'product' %}">Название товара</a>
-                    </h2>
-
-                    <span class="product-qty">Количество: 1</span>
-                  </div>
-                </td>
-                <td class="price-col">790 руб.</td>
-              </tr>
-              </tbody>
-            </table>
-          </div><!-- End #order-cart-section -->
-        </div><!-- End .order-summary -->
-      </div><!-- End .col-lg-4 -->
+{% include 'cart/included/order_summary.html' %}
     </div><!-- End .row -->
 
     <div class="row">
