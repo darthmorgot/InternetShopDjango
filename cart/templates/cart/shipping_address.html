@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main mb-4">
+  {% include 'included/breadcrumb.html' with page_name='Оформление' %}
+
+  <div class="container">
+
+    <ul class="checkout-progress-bar">
+      <li class="active">
+        <span>Доставка</span>
+      </li>
+      <li>
+        <span>Оплата</span>
+      </li>
+    </ul>
+    <div class="row">
+      <div class="col-lg-8">
+        <ul class="checkout-steps">
+          <li>
+            <h2 class="step-title">Адрес доставки</h2>
+
+            <div class="shipping-step-addresses">
+              <div class="shipping-address-box">
+                <address>
+                  Василий Пупкин <br>
+                  ул. Карла Маркса, д.110, кв.5 <br>
+                  г.Хабаровск <br>
+                  +7(923) 456-7890
+                </address>
+                <div class="address-box-action clearfix">
+                  <a href="#" class="btn btn-sm btn-link">Править</a>
+
+                  <a href="#" class="btn btn-sm btn-outline-secondary float-right ship-here">Выбрать адрес</a>
+                </div><!-- End .address-box-action -->
+              </div><!-- End .shipping-address-box -->
+              <div class="shipping-address-box">
+                <address>
+                  Иван Петров <br>
+                  ул. Ленина, д.73, кв.13 <br>
+                  г.Хабаровск <br>
+                  +7(914) 987-6543
+                </address>
+
+                <div class="address-box-action clearfix">
+                  <a href="#" class="btn btn-sm btn-link">Править</a>
+
+                  <a href="#" class="btn btn-sm btn-outline-secondary float-right ship-here">Выбрать адрес</a>
+                </div><!-- End .address-box-action -->
+              </div><!-- End .shipping-address-box -->
+            </div><!-- End .shipping-step-addresses -->
+            <a href="#" class="btn btn-sm btn-outline-secondary btn-new-address" data-toggle="modal"
+               data-target="#addressModal">+ Новый адрес</a>
+          </li>
+
+          <li>
+{% include 'cart/included/shipping_method.html' %}
+          </li>
+        </ul>
+      </div><!-- End .col-lg-8 -->
+
+{% include 'cart/included/order_summary.html' %}
+    </div><!-- End .row -->
+
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="checkout-steps-action">
+          <a href="{% url 'payment' %}" class="btn btn-primary float-right">Далее</a>
+        </div><!-- End .checkout-steps-action -->
+      </div><!-- End .col-lg-8 -->
+    </div><!-- End .row -->
+  </div><!-- End .container -->
+
+</main><!-- End .main -->
+{% endblock %}
+
+{% block new_address %}
+<!-- Modal -->
+<div class="modal fade" id="addressModal" tabindex="-1" role="dialog" aria-labelledby="addressModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form action="#">
+        <div class="modal-header">
+          <h3 class="modal-title" id="addressModalLabel">Адрес доставки</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div><!-- End .modal-header -->
+
+        <div class="modal-body">
+          <div class="form-group required-field">
+            <label>Имя </label>
+            <input type="text" class="form-control form-control-sm" required>
+          </div><!-- End .form-group -->
+
+          <div class="form-group required-field">
+            <label>Фамилия </label>
+            <input type="text" class="form-control form-control-sm" required>
+          </div><!-- End .form-group -->
+
+          <div class="form-group required-field">
+            <label>Улица </label>
+            <input type="text" class="form-control form-control-sm" required>
+          </div><!-- End .form-group -->
+
+          <div class="form-group required-field">
+            <label>Номер дома </label>
+            <input type="text" class="form-control form-control-sm" required>
+          </div><!-- End .form-group -->
+
+          <div class="form-group required-field">
+            <label>Город </label>
+            <input type="text" class="form-control form-control-sm" required>
+          </div><!-- End .form-group -->
+
+          <div class="form-group">
+            <label>Область/Край</label>
+            <div class="select-custom">
+              <select class="form-control form-control-sm">
+                <option value="">Выберите регион</option>
+                <option value="orl">Орловская</option>
+                <option value="khv">Хабаровский</option>
+              </select>
+            </div><!-- End .select-custom -->
+          </div><!-- End .form-group -->
+
+          <div class="form-group required-field">
+            <label>Почтовый индекс </label>
+            <input type="text" class="form-control form-control-sm" required>
+          </div><!-- End .form-group -->
+
+          <div class="form-group required-field">
+            <label>Телефонный номер </label>
+            <div class="form-control-tooltip">
+              <input type="tel" class="form-control form-control-sm" required>
+              <span class="input-tooltip" data-toggle="tooltip" title="По вопросам доставки."
+                    data-placement="right"><i class="icon-question-circle"></i></span>
+            </div><!-- End .form-control-tooltip -->
+          </div><!-- End .form-group -->
+
+          <div class="form-group-custom-control">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="address-save">
+              <label class="custom-control-label" for="address-save">Сохранить в адресной книге</label>
+            </div><!-- End .custom-checkbox -->
+          </div><!-- End .form-group -->
+        </div><!-- End .modal-body -->
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link btn-sm" data-dismiss="modal">Отменить</button>
+          <button type="submit" class="btn btn-primary btn-sm">Сохранить</button>
+        </div><!-- End .modal-footer -->
+      </form>
+    </div><!-- End .modal-content -->
+  </div><!-- End .modal-dialog -->
+</div><!-- End .modal -->
+{% endblock %}
+
+{% block switch-address %}
+<script src="{% static 'js/switch-address.js' %}"></script>
+{% endblock %}
