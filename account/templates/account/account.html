@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="main">
+  {% include 'included/breadcrumb.html' with page_name='Учетная запись' %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 order-lg-last dashboard-content">
+        <h2>Редактировать учетную запись</h2>
+
+        <form action="#">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group required-field">
+                    <label for="acc-name">Имя</label>
+                    <input type="text" class="form-control" id="acc-name" name="acc-name" required>
+                  </div><!-- End .form-group -->
+                </div><!-- End .col-md-4 -->
+
+                <div class="col-md-6">
+                  <div class="form-group required-field">
+                    <label for="acc-lastname">Фамилия</label>
+                    <input type="text" class="form-control" id="acc-lastname" name="acc-lastname" required>
+                  </div><!-- End .form-group -->
+                </div><!-- End .col-md-4 -->
+              </div><!-- End .row -->
+            </div><!-- End .col-sm-11 -->
+          </div><!-- End .row -->
+
+          <div class="row">
+            <div class="col-md-8">
+              <div class="form-group required-field">
+                <label for="acc-email">Email</label>
+                <input type="email" class="form-control" id="acc-email" name="acc-email" required>
+              </div><!-- End .form-group -->
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-8">
+              <div class="form-group required-field">
+                <label for="acc-password">Пароль</label>
+                <input type="password" class="form-control" id="acc-password" name="acc-password" required>
+              </div><!-- End .form-group -->
+            </div>
+          </div>
+
+          <div class="mb-2"></div><!-- margin -->
+
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="change-pass-checkbox" value="1">
+            <label class="custom-control-label" for="change-pass-checkbox">Изменить пароль</label>
+          </div><!-- End .custom-checkbox -->
+
+          <div id="account-chage-pass">
+            <h3 class="mb-2">Изменить пароль</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group required-field">
+                  <label for="acc-pass2">Пароль</label>
+                  <input type="password" class="form-control" id="acc-pass2" name="acc-pass2">
+                </div><!-- End .form-group -->
+              </div><!-- End .col-md-6 -->
+
+              <div class="col-md-6">
+                <div class="form-group required-field">
+                  <label for="acc-pass3">Подтвердить пароль</label>
+                  <input type="password" class="form-control" id="acc-pass3" name="acc-pass3">
+                </div><!-- End .form-group -->
+              </div><!-- End .col-md-6 -->
+            </div><!-- End .row -->
+          </div><!-- End #account-chage-pass -->
+
+          <div class="required text-right">* Обязательное поле</div>
+          <div class="form-footer">
+            <a href="{% url 'dashboard' %}"><i class="icon-angle-double-left"></i>Назад</a>
+
+            <div class="form-footer-right">
+              <button type="submit" class="btn btn-primary">Сохранить</button>
+            </div>
+          </div><!-- End .form-footer -->
+        </form>
+      </div><!-- End .col-lg-9 -->
+
+      <aside class="sidebar col-lg-3">
+        <div class="widget widget-dashboard">
+          <h3 class="widget-title">Моя учетная запись</h3>
+
+          <ul class="list">
+            <li><a href="{% url 'dashboard' %}">Панель управления</a></li>
+            <li class="active"><a>Данные учетной записи</a></li>
+            <li><a href="{% url 'page_development' %}">Адресная книга</a></li>
+            <li><a href="{% url 'page_development' %}">Мои заказы</a></li>
+          </ul>
+        </div><!-- End .widget -->
+      </aside><!-- End .col-lg-3 -->
+    </div><!-- End .row -->
+  </div><!-- End .container -->
+
+</main><!-- End .main -->
+{% endblock %}
