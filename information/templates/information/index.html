@@ -3,7 +3,7 @@
 
 {% block content %}
   <main class="home main">
-{% include 'products/included/top_slider.html' %}
+{% include 'information/included/top_slider.html' %}
 
     <div class="container">
       {% block product-panel-top %}
@@ -71,11 +71,11 @@
       {% endblock %}
 
 <!-- Spare parts -->
-{% include 'products/included/spare_parts.html' %}
+{% include 'information/included/spare_parts.html' %}
     </div>
 
 <!-- Home banner -->
-{% include 'products/included/home_banner.html' %}
+{% include 'information/included/home_banner.html' %}
 
     <div class="container">
       {% block product-panel-bottom %}
@@ -140,11 +140,11 @@
       {% endblock %}
 
 <!-- Discount banner -->
-{% include 'products/included/discount_banner.html' %}
+{% include 'information/included/discount_banner.html' %}
     </div>
   </main><!-- End .main -->
 {% endblock %}
 
 {% block add_cart_modal %}
-{% include 'products/included/add_cart_modal.html' %}
+{% include 'included/add_cart_modal.html' %}
 {% endblock %}
