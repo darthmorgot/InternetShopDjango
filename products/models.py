@@ -13,8 +13,8 @@ class Category(MPTTModel):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
-        return reverse('catalog', kwargs={'category_slug': self.slug})
+    # def get_absolute_url(self):
+    #     return reverse('product_by_category', kwargs={'category_slug': self.slug})
 
     class Meta:
         verbose_name = 'Категории'
