@@ -1,5 +1,7 @@
 from django.views.generic import TemplateView
 
+from products.models import Category
+
 
 class HomePageView(TemplateView):
     template_name = 'information/index.html'
@@ -9,6 +11,7 @@ class HomePageView(TemplateView):
         context['title'] = 'Главная'
         context['product_range'] = range(1, 7)
         context['cart_range'] = range(1, 3)
+        context['categories'] = Category.objects.all()
         return context
 
 
