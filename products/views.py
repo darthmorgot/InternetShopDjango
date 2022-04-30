@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.views.generic import TemplateView
 
 
@@ -29,3 +30,7 @@ class ProductPageView(TemplateView):
         context['product_range'] = range(1, 7)
         context['cart_range'] = range(1, 3)
         return context
+
+
+def test(request):
+    return HttpResponse('<h1>Продукты из указанной категории</h1>')
