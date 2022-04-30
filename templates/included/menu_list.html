@@ -1,30 +1,14 @@
+{% load mptt_tags %}
+
                 <ul>
+                  {% recursetree categories %}
                   <li>
-                    <a href="#">Велосипеды</a>
-                    <ul>
-                      <li><a href="#">Детские</a></li>
-                      <li><a href="#">Горные</a></li>
-                      <li><a href="#">Шоссейные</a></li>
-                      <li><a href="#">Складные</a></li>
-                      <li><a href="#">Экстремальные</a></li>
-                    </ul>
+                    <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
+                    {% if not node.is_leaf_node %}
+                      <ul class="children">
+                        {{ children }}
+                      </ul>
+                    {% endif %}
                   </li>
-                  <li>
-                    <a href="#">Самокаты</a>
-                    <ul>
-                      <li><a href="#">Детские 2-колесные</a></li>
-                      <li><a href="#">Детские 3-колесные</a></li>
-                      <li><a href="#">Электрические</a></li>
-                      <li><a href="#">Трюковые</a></li>
-                      <li><a href="#">Тридеры</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">Прочие товары</a>
-                    <ul>
-                      <li><a href="#">Аксессуары</a></li>
-                      <li><a href="#">Запчасти</a></li>
-                      <li><a href="#">Инструменты</a></li>
-                    </ul>
-                  </li>
+                  {% endrecursetree %}
                 </ul>
