@@ -1,7 +1,7 @@
 from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
 
-from .models import Product, Category
+from .models import Category, Product, Image
 
 
 class CustomMPTTModelAdmin(DraggableMPTTAdmin):
@@ -10,5 +10,15 @@ class CustomMPTTModelAdmin(DraggableMPTTAdmin):
     list_display_links = ['indented_title']
 
 
-admin.site.register(Product)
+class ImageInline(admin.TabularInline):
+    model = Image
+    extra = 1
+    max_num = 5
+
+
+class ProductAdmin(admin.ModelAdmin):
+    inlines = [ImageInline]
+
+
 admin.site.register(Category, CustomMPTTModelAdmin)
+admin.site.register(Product, ProductAdmin)
