@@ -1,5 +1,6 @@
-from django.http import HttpResponse
 from django.views.generic import TemplateView
+
+from products.models import Category
 
 
 class ProductQuickViewView(TemplateView):
@@ -18,6 +19,7 @@ class CatalogPageView(TemplateView):
         context['title'] = 'Каталог'
         context['product_range'] = range(1, 11)
         context['cart_range'] = range(1, 3)
+        context['categories'] = Category.objects.all()
         return context
 
 
@@ -29,8 +31,5 @@ class ProductPageView(TemplateView):
         context['title'] = 'Товар'
         context['product_range'] = range(1, 7)
         context['cart_range'] = range(1, 3)
+        context['categories'] = Category.objects.all()
         return context
-
-
-def test(request):
-    return HttpResponse('<h1>Продукты из указанной категории</h1>')
