@@ -159,113 +159,24 @@
       <aside class="sidebar-shop col-lg-2 order-lg-first">
         <div class="sidebar-wrapper">
           <div class="widget">
-            <h3 class="widget-title">
-              <a data-toggle="collapse" href="#widget-body-1" role="button" aria-expanded="true"
-                 aria-controls="widget-body-1">Велосипеды</a>
-            </h3>
+            {% include 'products/included/catalog_menu.html' with cat_name='Велосипеды' number=1 %}
+          </div><!-- End .widget -->
 
-            <div class="collapse show" id="widget-body-1">
-              <div class="widget-body">
-                <ul class="cat-list">
-                  <li><a href="#">Детские</a></li>
-                  <li><a href="#">Горные</a></li>
-                  <li><a href="#">Шоссейные</a></li>
-                  <li><a href="#">Складные</a></li>
-                  <li><a href="#">Экстремальные</a></li>
-                </ul>
-              </div><!-- End .widget-body -->
-            </div><!-- End .collapse -->
+          <div class="widget">
+            {% include 'products/included/catalog_menu.html' with cat_name='Самокаты' number=2 %}
+          </div><!-- End .widget -->
+
+          <div class="widget">
+            {% include 'products/included/catalog_menu.html' with cat_name='Прочие товары' number=3 %}
           </div><!-- End .widget -->
 
           <div class="widget">
             <h3 class="widget-title">
-              <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="true"
-                 aria-controls="widget-body-2">Самокаты</a>
+              <a data-toggle="collapse" href="#widget-body-4" role="button" aria-expanded="true"
+                 aria-controls="widget-body-4">Цена</a>
             </h3>
 
-            <div class="collapse show" id="widget-body-2">
-              <div class="widget-body">
-                <ul class="cat-list">
-                  <li><a href="#">Детские 2-колесные</a></li>
-                  <li><a href="#">Детские 3-колесные</a></li>
-                  <li><a href="#">Электрические</a></li>
-                  <li><a href="#">Трюковые</a></li>
-                  <li><a href="#">Тридеры</a></li>
-                </ul>
-              </div><!-- End .widget-body -->
-            </div><!-- End .collapse -->
-          </div><!-- End .widget -->
-
-          <div class="widget">
-            <h3 class="widget-title">
-              <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="false"
-                 aria-controls="widget-body-3" class="collapsed">Аксессуары</a>
-            </h3>
-
-            <div class="collapse" id="widget-body-3">
-              <div class="widget-body">
-                <ul class="cat-list">
-                  <li><a href="#">Велозащита</a></li>
-                  <li><a href="#">Держатели</a></li>
-                  <li><a href="#">Велокомпьютер</a></li>
-                  <li><a href="#">Зеркала</a></li>
-                  <li><a href="#">Корзины</a></li>
-                  <li><a href="#">Сумки</a></li>
-                  <li><a href="#">Багажники</a></li>
-                  <li><a href="#">Насосы</a></li>
-                  <li><a href="#">Фонари</a></li>
-                </ul>
-              </div><!-- End .widget-body -->
-            </div><!-- End .collapse -->
-          </div><!-- End .widget -->
-
-          <div class="widget">
-            <h3 class="widget-title">
-              <a data-toggle="collapse" href="#widget-body-4" role="button" aria-expanded="false"
-                 aria-controls="widget-body-4" class="collapsed">Запчасти</a>
-            </h3>
-
-            <div class="collapse" id="widget-body-4">
-              <div class="widget-body">
-                <ul class="cat-list">
-                  <li><a href="#">Колеса</a></li>
-                  <li><a href="#">Педали</a></li>
-                  <li><a href="#">Вилки</a></li>
-                  <li><a href="#">Звездочки</a></li>
-                  <li><a href="#">Цепи</a></li>
-                  <li><a href="#">Тормоза</a></li>
-                  <li><a href="#">Переключение скоростей</a></li>
-                  <li><a href="#">Рули</a></li>
-                  <li><a href="#">Седла</a></li>
-                </ul>
-              </div><!-- End .widget-body -->
-            </div><!-- End .collapse -->
-          </div><!-- End .widget -->
-
-          <div class="widget">
-            <h3 class="widget-title">
-              <a data-toggle="collapse" href="#widget-body-5" role="button" aria-expanded="false"
-                 aria-controls="widget-body-5" class="collapsed">Инструменты</a>
-            </h3>
-
-            <div class="collapse" id="widget-body-5">
-              <div class="widget-body">
-                <ul class="cat-list">
-                  <li><a href="#">Ключи</a></li>
-                  <li><a href="#">Чистка и уход</a></li>
-                  <li><a href="#">Смазки</a></li>
-                </ul>
-              </div><!-- End .widget-body -->
-            </div><!-- End .collapse -->
-          </div><!-- End .widget -->
-
-          <div class="widget">
-            <h3 class="widget-title">
-              <a data-toggle="collapse" href="#widget-body-6" role="button" aria-expanded="true"
-                 aria-controls="widget-body-6">Цена</a>
-            </h3>
-
-            <div class="collapse show" id="widget-body-6">
+            <div class="collapse show" id="widget-body-4">
               <div class="widget-body">
                 <form action="#">
                   <div class="price-slider-wrapper">
@@ -280,25 +191,6 @@
                     <button type="submit" class="btn btn-primary">Применить</button>
                   </div><!-- End .filter-price-action -->
                 </form>
-              </div><!-- End .widget-body -->
-            </div><!-- End .collapse -->
-          </div><!-- End .widget -->
-
-          <div class="widget">
-            <h3 class="widget-title">
-              <a data-toggle="collapse" href="#widget-body-7" role="button" aria-expanded="false"
-                 aria-controls="widget-body-7" class="collapsed">Производитель</a>
-            </h3>
-
-            <div class="collapse" id="widget-body-7">
-              <div class="widget-body">
-                <ul class="cat-list">
-                  <li><a href="#">Марка 1</a></li>
-                  <li><a href="#">Марка 2</a></li>
-                  <li><a href="#">Марка 3</a></li>
-                  <li><a href="#">Марка 4</a></li>
-                  <li><a href="#">Марка 5</a></li>
-                </ul>
               </div><!-- End .widget-body -->
             </div><!-- End .collapse -->
           </div><!-- End .widget -->
