@@ -1,0 +1,23 @@
+{% load mptt_tags %}
+
+            {% for node, structure in categories|tree_info:'ancestors' %}
+              {% if structure.new_level and structure.ancestors|tree_path == cat_name %}
+                <h3 class="widget-title">
+                  <a data-toggle="collapse" href="#widget-body-{{ number }}" role="button" aria-expanded="true"
+                     aria-controls="widget-body-{{ number }}">{{ structure.ancestors|tree_path }}</a>
+                </h3>
+                <div class="collapse show" id="widget-body-{{ number }}">
+                  <div class="widget-body">
+                    <ul class="cat-list">
+              {% endif %}
+              {% if node.parent.name == cat_name %}
+                      <li><a href="{{ node.get_absolute_url }}">{{ node.name }}</a></li>
+              {% endif %}
+              {% for level in structure.closed_levels %}
+                {% if structure.ancestors|tree_path == cat_name and level != 0 %}
+                    </ul>
+                  </div>
+                </div>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
