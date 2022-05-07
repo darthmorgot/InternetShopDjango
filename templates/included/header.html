@@ -1,4 +1,6 @@
 {% load static %}
+{% load mptt_tags %}
+
   <header class="header">
     <div class="header-top">
       <div class="container">
@@ -53,24 +55,16 @@
               <div class="header-search-wrapper">
                 <input type="search" class="form-control" name="seek" id="seek" placeholder="Я ишу..." required="">
                 <div class="select-custom">
-                  <select id="cat" name="cat">
+                  <select name="cat" id="cat">
                     <option value="">Все категории</option>
-                    <option value="1">Велосипеды</option>
-                    <option value="12">- Детские</option>
-                    <option value="15">- Горные</option>
-                    <option value="13">- Шоссейные</option>
-                    <option value="16">- Складные</option>
-                    <option value="14">- Экстремальные</option>
-                    <option value="2">Самокаты</option>
-                    <option value="21">- Детские 2-колесные</option>
-                    <option value="22">- Детские 3-колесные</option>
-                    <option value="23">- Электрические</option>
-                    <option value="24">- Трюковые</option>
-                    <option value="25">- Тридеры</option>
-                    <option value="6">Прочие товары</option>
-                    <option value="63">- Аксессуары</option>
-                    <option value="64">- Запчасти</option>
-                    <option value="64">- Инструменты</option>
+                    {% for node, structure in categories|tree_info:"ancestors" %}
+                      {% if structure.new_level and structure.ancestors %}
+                        <option value="{{ node.parent_id }}">{{ structure.ancestors|tree_path }}</option>
+                      {% endif %}
+                      {% if node.is_child_node %}
+                        <option value="{{ node.pk }}">- {{ node.name }}</option>
+                      {% endif %}
+                    {% endfor %}
                   </select>
                 </div><!-- End .select-custom -->
                 <button class="btn" type="submit"><i class="icon-search-3"></i></button>
