@@ -1,0 +1,16 @@
+{% load mptt_tags %}
+
+                <ul class="col-md-6 col-sm-6">
+                  {% for node, structure in categories|tree_info:'ancestors' %}
+                    {% if structure.new_level and structure.ancestors|tree_path == cat_name %}
+                      <li>
+                        <a href="{{ node.parent.get_absolute_url }}" class="col-title">
+                          {{ structure.ancestors|tree_path }}
+                        </a>
+                      </li>
+                    {% endif %}
+                    {% if node.parent.name == cat_name %}
+                      <li><a href="{{ node.get_absolute_url }}">{{ node.name }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
