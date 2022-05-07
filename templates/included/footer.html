@@ -1,4 +1,5 @@
 {% load static %}
+
   <footer class="footer">
     <div class="instagram-box">
       <div class="instagram-follow">
@@ -87,34 +88,15 @@
           <div class="col-md-6 col-lg-3 col-sm-6">
             <div class="widget">
               <div class="widget-content row row-sm">
-                <ul class="col-md-6 col-sm-6">
-                  <li><a href="{% url 'catalog' %}" class="col-title">Велосипеды</a></li>
-                  <li><a href="{% url 'catalog' %}">Детские</a></li>
-                  <li><a href="{% url 'catalog' %}">Горные</a></li>
-                  <li><a href="{% url 'catalog' %}">Шоссейные</a></li>
-                  <li><a href="{% url 'catalog' %}">Складные</a></li>
-                  <li><a href="{% url 'catalog' %}">Экстремальные</a></li>
-                </ul>
-                <ul class="col-md-6 col-sm-6">
-                  <li><a href="{% url 'catalog' %}" class="col-title">Самокаты</a></li>
-                  <li><a href="{% url 'catalog' %}">Детские 2-колесные</a></li>
-                  <li><a href="{% url 'catalog' %}">Детские 3-колесные</a></li>
-                  <li><a href="{% url 'catalog' %}">Электрические</a></li>
-                  <li><a href="{% url 'catalog' %}">Трюковые</a></li>
-                  <li><a href="{% url 'catalog' %}">Тридеры</a></li>
-                </ul>
+                {% include 'included/category_menu.html' with cat_name='Велосипеды' %}
+                {% include 'included/category_menu.html' with cat_name='Самокаты' %}
               </div>
             </div>
           </div>
           <div class="col-md-6 col-lg-3 col-sm-6">
             <div class="widget">
               <div class="widget-content row row-sm">
-                <ul class="col-md-6 col-sm-6">
-                  <li><a href="{% url 'catalog' %}" class="col-title">Прочие товары</a></li>
-                  <li><a href="{% url 'catalog' %}">Аксессуары</a></li>
-                  <li><a href="{% url 'catalog' %}">Запчасти</a></li>
-                  <li><a href="{% url 'catalog' %}">Инструменты</a></li>
-                </ul>
+                {% include 'included/category_menu.html' with cat_name='Прочие товары' %}
                 <ul class="col-md-6 col-sm-6">
                   <li><a class="col-title">Аккаунт</a></li>
                   <li><a href="{% url 'dashboard' %}">Личный кабинет</a></li>
