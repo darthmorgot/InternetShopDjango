@@ -2,6 +2,8 @@ from django.views.generic import TemplateView
 
 from products.models import Category
 
+categories = Category.objects.all()
+
 
 class ProductQuickViewView(TemplateView):
     template_name = 'products/popup/product_quick_view.html'
@@ -19,7 +21,7 @@ class CatalogPageView(TemplateView):
         context['title'] = 'Каталог'
         context['product_range'] = range(1, 11)
         context['cart_range'] = range(1, 3)
-        context['categories'] = Category.objects.all()
+        context['categories'] = categories
         return context
 
 
@@ -31,5 +33,5 @@ class ProductPageView(TemplateView):
         context['title'] = 'Товар'
         context['product_range'] = range(1, 7)
         context['cart_range'] = range(1, 3)
-        context['categories'] = Category.objects.all()
+        context['categories'] = categories
         return context
