@@ -29,15 +29,13 @@
             }
           }
         }">
-          {% for num in product_range %}
+          {% for product in products %}
           <div class="product-default inner-quickview inner-icon center-details">
             <figure>
               <a href="{% url 'product' %}">
-                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
+<!--                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">-->
+                <img src="{{ product.image.url }}" alt="Картинка товара">
               </a>
-              <div class="label-group">
-                <div class="product-label label-black">1<sup>o</sup></div>
-              </div>
               <div class="btn-icon-group">
                 <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
                   <i class="icon-bag"></i>
@@ -48,11 +46,13 @@
             <div class="product-details">
               <div class="category-wrap">
                 <div class="category-list">
-                  <a href="{% url 'catalog' %}" class="product-category">Категория</a>
+                  <a href="{% url 'catalog' %}" class="product-category">
+                    {{ product.category.parent }} {{ product.category }}
+                  </a>
                 </div>
               </div>
               <h2 class="product-title">
-                <a href="{% url 'product' %}">Товар {{ num }}</a>
+                <a href="{% url 'product' %}">{{ product.name }}</a>
               </h2>
               <div class="ratings-container">
                 <div class="product-ratings">
@@ -60,7 +60,7 @@
                 </div><!-- End .product-ratings -->
               </div><!-- End .product-container -->
               <div class="price-box">
-                <span class="old-price">5900</span><span>&nbsp;руб.</span>
+                <span class="old-price">{{ product.price }}</span><span>&nbsp;руб.</span>
                 <span class="product-price">4900</span><span>&nbsp;руб.</span>
               </div><!-- End .price-box -->
             </div><!-- End .product-details -->
