@@ -28,14 +28,14 @@
             <div class="card">
               <div class="card-header">
                 Контактная информация
-                <a href="my-account.html" class="card-edit">Править</a>
+                <a href="{% url 'account' %}" class="card-edit">Править</a>
               </div><!-- End .card-header -->
 
               <div class="card-body">
                 <p>
                   Василий Пупкин<br>
                   vasyapupkin@gmail.com<br>
-                  <a href="my-account.html">Изменить пароль</a>
+                  <a href="{% url 'account' %}">Изменить пароль</a>
                 </p>
               </div><!-- End .card-body -->
             </div><!-- End .card -->
@@ -45,7 +45,7 @@
             <div class="card">
               <div class="card-header">
                 Мои заказы
-                <a href="my-account.html" class="card-edit">Править</a>
+                <a href="{% url 'page_development' %}" class="card-edit">Править</a>
               </div><!-- End .card-header -->
 
               <div class="card-body">
@@ -60,14 +60,14 @@
             <div class="card">
               <div class="card-header">
                 Адресная книга
-                <a href="my-account.html" class="card-edit">Править</a>
+                <a href="{% url 'page_development' %}" class="card-edit">Править</a>
               </div><!-- End .card-header -->
 
               <div class="card-body">
                 <h4 class="">Адрес доставки по умолчанию</h4>
                 <address>
                   Вы не установили адрес доставки по умолчанию.<br>
-                  <a href="my-account.html">Редактировать адрес</a>
+                  <a href="{% url 'page_development' %}">Редактировать адрес</a>
                 </address>
               </div><!-- End .card-body -->
             </div><!-- End .card -->
