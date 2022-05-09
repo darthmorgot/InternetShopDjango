@@ -13,7 +13,7 @@ class CustomMPTTModelAdmin(DraggableMPTTAdmin):
 class ImageInline(admin.TabularInline):
     model = Image
     extra = 1
-    max_num = 5
+    max_num = 4
 
 
 class ProductAdmin(admin.ModelAdmin):
