@@ -25,6 +25,13 @@ class Category(MPTTModel):
         order_insertion_by = ['name']
 
 
+def upload_gallery_image(instance, filename):
+    if instance.product:
+        return f'product_images/{instance.product.slug}/{filename}'
+    else:
+        return f'product_images/{instance.slug}/{filename}'
+
+
 class Product(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name='Название')
     slug = models.SlugField(max_length=100, unique=True, db_index=True, verbose_name='URL', null=True)
@@ -33,6 +40,7 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField(default=0, verbose_name='Количество')
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='products',
                                  verbose_name='Категория')
+    image = models.ImageField(upload_to=upload_gallery_image, verbose_name='Картинка', null=True)
 
     def __str__(self):
         return self.name
@@ -44,10 +52,6 @@ class Product(models.Model):
         verbose_name = 'Товары'
         verbose_name_plural = 'Товары'
         ordering = ['id']
-
-
-def upload_gallery_image(instance, filename):
-    return f'product_images/{instance.product.slug}/{filename}'
 
 
 class Image(models.Model):
