@@ -15,7 +15,7 @@ class HomePageView(ListView):
         context['categories'] = categories
         context['product_range'] = range(1, 7)
         context['cart_range'] = range(1, 3)
-        context['products'] = Product.objects.all()
+        context['products'] = Product.objects.all()[:6]
         return context
 
 
