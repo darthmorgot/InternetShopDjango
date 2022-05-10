@@ -1,0 +1,70 @@
+{% load static %}
+
+      <section class="product-panel">
+        <div class="section-title">
+          <h2>{{ heading }}</h2>
+        </div>
+        <div class="owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
+          'margin': 4,
+          'items': 2,
+          'autoplayTimeout': 5000,
+          'dots': false,
+          'nav' : true,
+          'responsive': {
+            '768': {
+              'items': 3
+            },
+            '992' : {
+              'items' : 4
+            },
+            '1200': {
+              'items': 5
+            }
+          }
+        }">
+          {% for product in products %}
+          <div class="product-default inner-quickview inner-icon center-details">
+            <figure>
+              {% if product.get_absolute_url %}
+              <a href="{{ product.get_absolute_url }}">
+                <img src="{{ product.image.url }}" alt="Картинка товара">
+              </a>
+              {% else %}
+              <a>
+                <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
+              </a>
+              {% endif %}
+              <div class="btn-icon-group">
+                <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
+                  <i class="icon-bag"></i>
+                </button>
+              </div>
+              <a href="{% url 'quick_view' %}" class="btn-quickview">Быстрый просмотр</a>
+            </figure>
+            <div class="product-details">
+              <div class="category-wrap">
+                <div class="category-list">
+                  <a href="{{ product.category.get_absolute_url }}" class="product-category">
+                    {{ product.category.parent }} {{ product.category }}
+                  </a>
+                </div>
+              </div>
+              <h2 class="product-title">
+                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+              </h2>
+              <div class="ratings-container">
+                <div class="product-ratings">
+                  <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                </div><!-- End .product-ratings -->
+              </div><!-- End .product-container -->
+              <div class="price-box">
+                {% if product.discount %}
+                <span class="old-price">{{ product.price }}</span><span>&nbsp;руб.</span>
+                {% endif %}
+                <span class="product-price">{{ product.get_discount_price }}</span><span>&nbsp;руб.</span>
+              </div><!-- End .price-box -->
+            </div><!-- End .product-details -->
+          </div>
+          {% endfor %}
+        </div>
+      </section>
