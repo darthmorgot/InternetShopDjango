@@ -1,15 +1,18 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 
-from products.models import Category
+from products.models import Category, Product, Image
 
 categories = Category.objects.all()
 
 
-class ProductQuickViewView(TemplateView):
+class ProductQuickViewView(DetailView):
+    model = Product
     template_name = 'products/popup/product_quick_view.html'
+    context_object_name = 'product'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['images'] = Image.objects.filter(product__pk=self.kwargs['pk'])
         return context
 
 
