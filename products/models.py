@@ -50,7 +50,7 @@ class Product(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('product_test', kwargs={'product_id': self.pk})
+        return reverse('product', kwargs={'product_id': self.pk})
 
     def get_discount_price(self):
         return int(self.price - (self.price * self.discount / 100))
