@@ -30,7 +30,7 @@
             <div class="toolbox-item toolbox-sort">
               <div class="select-custom">
                 <select name="orderby" class="form-control">
-                  <option value="menu_order" selected="selected">Сортировка</option>
+                  <option value="sorting" selected="selected">Сортировка</option>
                   <option value="popularity">Популярные</option>
                   <option value="rating">По рейтингу</option>
                   <option value="date">Новинки</option>
@@ -59,29 +59,37 @@
         </nav>
 
         <div class="row row-sm">
-          {% for num in product_range %}
+          {% for product in products %}
           <div class="col-6 col-md-4 col-xl-3 product-grid">
             <div class="product-default inner-quickview inner-icon">
               <figure>
-                <a href="{% url 'product' %}">
+                {% if product.get_absolute_url %}
+                <a href="{{ product.get_absolute_url }}">
+                  <img src="{{ product.image.url }}" alt="Картинка товара">
+                </a>
+                {% else %}
+                <a>
                   <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
                 </a>
+                {% endif %}
                 <div class="btn-icon-group">
                   <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal"
                           title="Добавить в корзину">
                     <i class="icon-bag"></i>
                   </button>
                 </div>
-                <a href="{% url 'quick_view' %}" class="btn-quickview">Быстрый просмотр</a>
+                <a href="{% url 'quick_view' product.pk %}" class="btn-quickview">Быстрый просмотр</a>
               </figure>
               <div class="product-details">
                 <div class="category-wrap">
                   <div class="category-list">
-                    <a href="category.html" class="product-category">Категория</a>
+                    <a href="{{ product.category.get_absolute_url }}" class="product-category">
+                      {{ product.category.parent }} {{ product.category }}
+                    </a>
                   </div>
                 </div>
                 <h2 class="product-title">
-                  <a href="{% url 'product' %}">Товар {{ num }}</a>
+                  <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
                 </h2>
                 <div class="ratings-container">
                   <div class="product-ratings">
@@ -89,7 +97,10 @@
                   </div><!-- End .product-ratings -->
                 </div><!-- End .product-container -->
                 <div class="price-box">
-                  <span class="product-price">4900</span><span>&nbsp;руб.</span>
+                  {% if product.discount %}
+                  <span class="old-price">{{ product.price }}&nbsp;руб.</span>
+                  {% endif %}
+                  <span class="product-price">{{ product.get_discount_price }}</span><span>&nbsp;руб.</span>
                 </div><!-- End .price-box -->
               </div><!-- End .product-details -->
             </div>
@@ -97,34 +108,42 @@
 
           <div class="col-6 col-sm-12 product-default left-details product-list product-hide">
             <figure>
-              <a href="{% url 'product' %}">
+              {% if product.get_absolute_url %}
+              <a href="{{ product.get_absolute_url }}">
+                <img src="{{ product.image.url }}" alt="Картинка товара">
+              </a>
+              {% else %}
+              <a>
                 <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
               </a>
+              {% endif %}
             </figure>
             <div class="product-details">
               <div class="category-list">
-                <a href="catalog.html" class="product-category">Категория</a>
+                <a href="{{ product.category.get_absolute_url }}" class="product-category">
+                  {{ product.category.parent }} {{ product.category }}
+                </a>
               </div>
               <h2 class="product-title">
-                <a href="{% url 'product' %}">Товар {{ num }}</a>
+                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
               </h2>
               <div class="ratings-container">
                 <div class="product-ratings">
                   <span class="ratings" style="width:100%"></span><!-- End .ratings -->
                 </div><!-- End .product-ratings -->
               </div><!-- End .product-container -->
-              <p class="product-description">А ещё активно развивающиеся страны третьего мира и по сей день остаются
-                уделом либералов, которые жаждут быть разоблачены. Предприниматели в сети интернет объективно
-                рассмотрены соответствующими инстанциями. В целом, конечно, синтетическое тестирование прекрасно
-                подходит для реализации глубокомысленных рассуждений.</p>
+              <p class="product-description">{{ product.description }}</p>
               <div class="price-box">
-                <span class="product-price">4900</span><span>&nbsp;руб.</span>
+                {% if product.discount %}
+                <span class="old-price">{{ product.price }}&nbsp;руб.</span>
+                {% endif %}
+                <span class="product-price">{{ product.get_discount_price }}</span><span>&nbsp;руб.</span>
               </div><!-- End .price-box -->
               <div class="product-action">
                 <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
                   <i class="icon-bag"></i>Добавить в корзину
                 </button>
-                <a href="{% url 'quick_view' %}" class="btn-quickview" title="Быстрый просмотр">
+                <a href="{% url 'quick_view' product.pk %}" class="btn-quickview" title="Быстрый просмотр">
                   <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
