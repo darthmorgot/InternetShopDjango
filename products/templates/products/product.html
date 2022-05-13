@@ -14,13 +14,15 @@
               <div class="product-slider-container product-item">
                 <div class="product-single-carousel owl-carousel owl-theme">
                   <div class="product-item">
-                    <img class="product-single-image" src="{% static 'images/no-image.png' %}"
-                         data-zoom-image="{% static 'images/no-image.png' %}"/>
+                    <img class="product-single-image" src="{{ product.image.url }}"
+                         data-zoom-image="{{ product.image.url }}"/>
                   </div>
+                  {% for item in images %}
                   <div class="product-item">
-                    <img class="product-single-image" src="{% static 'images/no-image.png' %}"
-                         data-zoom-image="{% static 'images/no-image.png' %}"/>
+                    <img class="product-single-image" src="{{ item.image.url }}"
+                         data-zoom-image="{{ item.image.url }}"/>
                   </div>
+                  {% endfor %}
                 </div>
                 <!-- End .product-single-carousel -->
                 <span class="prod-full-screen">
@@ -29,17 +31,19 @@
               </div>
               <div class="prod-thumbnail row owl-dots" id='carousel-custom-dots'>
                 <div class="col-3 owl-dot">
-                  <img src="{% static 'images/no-image.png' %}"/>
+                  <img src="{{ product.image.url }}"/>
                 </div>
+                {% for item in images %}
                 <div class="col-3 owl-dot">
-                  <img src="{% static 'images/no-image.png' %}"/>
+                  <img src="{{ item.image.url }}"/>
                 </div>
+                {% endfor %}
               </div>
             </div><!-- End .col-lg-5 -->
 
             <div class="col-lg-8 col-md-6">
               <div class="product-single-details">
-                <h1 class="product-title">Название товара</h1>
+                <h1 class="product-title">{{ product.name }}</h1>
 
                 <div class="ratings-container">
                   <div class="product-ratings">
@@ -50,14 +54,14 @@
                 </div><!-- End .product-container -->
 
                 <div class="price-box">
-                  <span class="product-price">4900</span><span>&nbsp;руб.</span>
+                  {% if product.discount %}
+                  <span class="old-price">{{ product.price }}&nbsp;руб.</span>
+                  {% endif %}
+                  <span class="product-price">{{ product.get_discount_price }}</span><span>&nbsp;руб.</span>
                 </div><!-- End .price-box -->
 
                 <div class="product-desc">
-                  <p>Предварительные выводы неутешительны: высококачественный прототип будущего проекта говорит о
-                    возможностях инновационных методов управления процессами. Но глубокий уровень погружения говорит о
-                    возможностях анализа существующих паттернов поведения. Представители современных социальных резервов
-                    указаны как претенденты на роль ключевых факторов.</p>
+                  <p>{{ product.description }}</p>
                 </div><!-- End .product-desc -->
 
                 <div class="product-action product-all-icons">
@@ -90,64 +94,9 @@
   </div><!-- End .container -->
 
   <div class="with-border-top">
-    <section class="container product-panel">
-      <div class="section-title">
-        <h2>Похожие товары</h2>
-      </div>
-      <div class="owl-carousel owl-theme" data-toggle="owl" data-owl-options="{
-        'margin': 4,
-        'items': 2,
-        'autoplayTimeout': 5000,
-        'dots': false,
-        'nav' : false,
-        'responsive': {
-          '768': {
-            'items': 3
-          },
-          '992' : {
-            'items' : 4
-          },
-          '1200': {
-            'items': 5
-          }
-        }
-      }">
-        {% for num in product_range %}
-        <div class="product-default inner-quickview inner-icon center-details">
-          <figure>
-            <a href="product.html">
-              <img src="{% static 'images/no-image.png' %}" alt="Картинка товара">
-            </a>
-            <div class="btn-icon-group">
-              <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal">
-                <i class="icon-bag"></i>
-              </button>
-            </div>
-            <a href="{% url 'quick_view' %}" class="btn-quickview">Быстрый просмотр</a>
-          </figure>
-          <div class="product-details">
-            <div class="category-wrap">
-              <div class="category-list">
-                <a href="{% url 'catalog' %}" class="product-category">Категория</a>
-              </div>
-            </div>
-            <h2 class="product-title">
-              <a href="product.html">Товар {{ num }}</a>
-            </h2>
-            <div class="ratings-container">
-              <div class="product-ratings">
-                <span class="ratings" style="width:100%"></span><!-- End .ratings -->
-              </div><!-- End .product-ratings -->
-            </div><!-- End .product-container -->
-            <div class="price-box">
-              <span class="old-price">5900</span><span>&nbsp;руб.</span>
-              <span class="product-price">4900</span><span>&nbsp;руб.</span>
-            </div><!-- End .price-box -->
-          </div><!-- End .product-details -->
-        </div>
-        {% endfor %}
-      </div>
-    </section>
+    <div class="container">
+    {% include 'information/included/product_slider.html' with heading='Похожие товары' %}
+    </div>
   </div>
 </main><!-- End .main -->
 {% endblock %}
