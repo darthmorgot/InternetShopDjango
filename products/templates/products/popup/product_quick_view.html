@@ -43,7 +43,7 @@
 
         <div class="price-box">
           {% if product.discount %}
-          <span class="old-price">{{ product.price }}</span><span>&nbsp;руб.</span>
+          <span class="old-price">{{ product.price }}&nbsp;руб.</span>
           {% endif %}
           <span class="product-price">{{ product.get_discount_price }}</span><span>&nbsp;руб.</span>
         </div><!-- End .price-box -->
@@ -57,7 +57,7 @@
             <input class="horizontal-quantity form-control" type="text">
           </div><!-- End .product-single-qty -->
 
-          <a href="{% url 'cart' %}" class="paction add-cart">Добавить в корзину</a>
+          <a href="{% url 'cart' %}" class="product-action add-cart">Добавить в корзину</a>
         </div><!-- End .product-action -->
 
       </div><!-- End .product-single-details -->
