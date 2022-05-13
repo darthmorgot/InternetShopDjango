@@ -2,8 +2,6 @@ from django.views.generic import TemplateView, ListView
 
 from products.models import Category, Product
 
-categories = Category.objects.all()
-
 
 class HomePageView(ListView):
     model = Product
@@ -12,8 +10,7 @@ class HomePageView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Главная'
-        context['categories'] = categories
-        context['product_range'] = range(1, 7)
+        context['categories'] = Category.objects.all()
         context['cart_range'] = range(1, 3)
         context['products'] = Product.objects.all()[:6]
         return context
@@ -26,7 +23,7 @@ class AboutPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'О нас'
         context['cart_range'] = range(1, 3)
-        context['categories'] = categories
+        context['categories'] = Category.objects.all()
         return context
 
 
@@ -37,7 +34,7 @@ class ContactPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Контакты'
         context['cart_range'] = range(1, 3)
-        context['categories'] = categories
+        context['categories'] = Category.objects.all()
         return context
 
 
@@ -47,5 +44,5 @@ class PageDevelopmentView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Страница в разработке'
-        context['categories'] = categories
+        context['categories'] = Category.objects.all()
         return context
