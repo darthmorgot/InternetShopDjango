@@ -1,3 +1,7 @@
           <div class="toolbox-item toolbox-show">
-            <label>1–10 из {{ number_products }} товаров</label>
+            {% if page_obj.start_index == page_obj.end_index %}
+            <label>{{ page_obj.end_index }} из {{ number_products }} товаров</label>
+            {% else %}
+            <label>{{ page_obj.start_index }}–{{ page_obj.end_index }} из {{ number_products }} товаров</label>
+            {% endif %}
           </div><!-- End .toolbox-item -->
