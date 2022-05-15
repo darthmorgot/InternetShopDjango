@@ -17,6 +17,7 @@ class ProductQuickViewView(DetailView):
 class CatalogPageView(ListView):
     model = Product
     template_name = 'products/catalog.html'
+    paginate_by = 4
 
     def get_context_data(self, **kwargs):
         products = Product.objects.all()
