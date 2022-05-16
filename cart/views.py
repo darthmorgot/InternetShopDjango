@@ -1,8 +1,7 @@
 from django.views.generic import TemplateView
 
 from products.models import Category
-
-categories = Category.objects.all()
+from cart.models import Cart
 
 
 class CartPageView(TemplateView):
@@ -12,7 +11,7 @@ class CartPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Корзина'
         context['cart_range'] = range(1, 3)
-        context['categories'] = categories
+        context['categories'] = Category.objects.all()
         return context
 
 
@@ -23,7 +22,7 @@ class ShippingPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Оформление'
         context['cart_range'] = range(1, 3)
-        context['categories'] = categories
+        context['categories'] = Category.objects.all()
         return context
 
 
@@ -34,7 +33,7 @@ class ShippingAddressPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Оформление'
         context['cart_range'] = range(1, 3)
-        context['categories'] = categories
+        context['categories'] = Category.objects.all()
         return context
 
 
@@ -45,5 +44,5 @@ class PaymentPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Оформление'
         context['cart_range'] = range(1, 3)
-        context['categories'] = categories
+        context['categories'] = Category.objects.all()
         return context
