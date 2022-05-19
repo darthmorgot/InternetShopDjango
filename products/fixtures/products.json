@@ -1,0 +1,1280 @@
+[
+  {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+      "name": "Велосипеды",
+      "slug": "velosipedy",
+      "parent": null,
+      "lft": 1,
+      "rght": 12,
+      "tree_id": 1,
+      "level": 0
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+      "name": "Самокаты",
+      "slug": "samokaty",
+      "parent": null,
+      "lft": 1,
+      "rght": 12,
+      "tree_id": 2,
+      "level": 0
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+      "name": "Прочие товары",
+      "slug": "prochie_tovary",
+      "parent": null,
+      "lft": 1,
+      "rght": 8,
+      "tree_id": 3,
+      "level": 0
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+      "name": "Детские",
+      "slug": "detskie",
+      "parent": 1,
+      "lft": 4,
+      "rght": 5,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 5,
+    "fields": {
+      "name": "Горные",
+      "slug": "gornye",
+      "parent": 1,
+      "lft": 2,
+      "rght": 3,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+      "name": "Шоссейные",
+      "slug": "shossejnye",
+      "parent": 1,
+      "lft": 8,
+      "rght": 9,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 7,
+    "fields": {
+      "name": "Складные",
+      "slug": "skladnye",
+      "parent": 1,
+      "lft": 6,
+      "rght": 7,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 8,
+    "fields": {
+      "name": "Экстремальные",
+      "slug": "ekstremalnye",
+      "parent": 1,
+      "lft": 10,
+      "rght": 11,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 9,
+    "fields": {
+      "name": "Детские 2-х колесные",
+      "slug": "detskie_2_kolesnye",
+      "parent": 2,
+      "lft": 4,
+      "rght": 5,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 10,
+    "fields": {
+      "name": "Детские 3-х колесные",
+      "slug": "detskie_3_kolesnye",
+      "parent": 2,
+      "lft": 2,
+      "rght": 3,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 11,
+    "fields": {
+      "name": "Электрические",
+      "slug": "elektricheskie",
+      "parent": 2,
+      "lft": 10,
+      "rght": 11,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 12,
+    "fields": {
+      "name": "Трюковые",
+      "slug": "tryukovye",
+      "parent": 2,
+      "lft": 8,
+      "rght": 9,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 13,
+    "fields": {
+      "name": "Тридеры",
+      "slug": "tridery",
+      "parent": 2,
+      "lft": 6,
+      "rght": 7,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 14,
+    "fields": {
+      "name": "Аксессуары",
+      "slug": "aksessuary",
+      "parent": 3,
+      "lft": 2,
+      "rght": 3,
+      "tree_id": 3,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 15,
+    "fields": {
+      "name": "Запчасти",
+      "slug": "zapchasti",
+      "parent": 3,
+      "lft": 4,
+      "rght": 5,
+      "tree_id": 3,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 16,
+    "fields": {
+      "name": "Инструменты",
+      "slug": "instrumenty",
+      "parent": 3,
+      "lft": 6,
+      "rght": 7,
+      "tree_id": 3,
+      "level": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "Велосипед Cube Reaction Pro 27.5",
+      "slug": "velosiped_cube_reaction_pro_275",
+      "description": "Легкий хардтейл для езды в стиле кросс-кантри с оборудованием профессионального класса Shimano, 12 скоростей. Технические особенности: алюминиевая рама Aluminium Lite, амортизационная вилка RockShox Judy Silver TK Air, двойные обода CUBE ZX20, дисковые гидравлические тормоза Shimano XT BR-M8100. Подходит для спортивного катания в стиле кросс-кантри и участия в гонках. Диаметр колес - 27,5 дюймов. Вес - 12,9 кг.",
+      "price": 235100,
+      "discount": 10,
+      "quantity": 1,
+      "category": 5,
+      "image": "product_images/velosiped_cube_reaction_pro_275/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "Велосипед Trek Wahoo 20",
+      "slug": "velosiped_trek_wahoo_20",
+      "description": "Велосипед, предназначенный для детей в возрасте от пяти до девяти лет с оборудованием начального любительского класса Shimano, 8 скоростей. Технические особенности: алюминиевая рама Alpha Silver Aluminum, жесткая вилка, двойные алюминиевые обода, надежные ободные тормоза Alloy linear-pull. Подходит для обучения и прогулочного катания в городских условиях. Диаметр колес - 20 дюймов. Вес - 8,89 кг.",
+      "price": 76000,
+      "discount": 0,
+      "quantity": 1,
+      "category": 4,
+      "image": "product_images/velosiped_trek_wahoo_20/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "Велосипед Dahon QIX D3",
+      "slug": "velosiped_dahon_qix_d3",
+      "description": "Компактный складной велосипед с навесным оборудованием DAHON, 3 скорости. Технические особенности: алюминиевая рама Lightweight Dalloy Aluminum, жесткая вилка Lightweight and Responsive Dalloy Aluminum, двойные обода Lightweight Aluminum Double Wall, надежные ободные тормоза Dahon Custom V-brakes, складные педали. Подходит для прогулочного катания в городских условиях. Размеры в сложенном виде: 67 x 26 x 60 см. Диаметр колес - 16 дюймов. Вес - 9,7 кг.",
+      "price": 88330,
+      "discount": 5,
+      "quantity": 1,
+      "category": 7,
+      "image": "product_images/velosiped_dahon_qix_d3/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "Велосипед Trek Checkpoint ALR 5",
+      "slug": "velosiped_trek_checkpoint_alr_5",
+      "description": "Гравийный велосипед с оборудованием начального профессионального класса Shimano, 22 скорости. Технические особенности: алюминиевая рама 300 Series Alpha Aluminum, жесткая карбоновая вилка Checkpoint carbon, двойные обода Bontrager Tubeless Ready, дисковые гидравлические тормоза Shimano RX400 hydraulic disc. Подходит для активной езды по различным дорогам и пересеченной местности. Диаметр колес - 28 дюймов. Вес - 10.17 кг.",
+      "price": 274890,
+      "discount": 10,
+      "quantity": 1,
+      "category": 6,
+      "image": "product_images/velosiped_trek_checkpoint_alr_5/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "Велосипед Forward Zigzag 20",
+      "slug": "velosiped_forward_zigzag_20",
+      "description": "Экстремальный велосипед BMX без переключения передач. Технические особенности: стальная рама Hi-Ten, жесткая стальная вилка, двойные алюминиевые обода Stars Circle Double Wall, надежные ободные тормоза клещевого типа Radius U936DR U-Brake. Подходит для экстремального катания в городских условиях или в специальных парках. Диаметр колес - 20 дюймов. Вес - 12,3 кг.",
+      "price": 34300,
+      "discount": 3,
+      "quantity": 1,
+      "category": 8,
+      "image": "product_images/velosiped_forward_zigzag_20/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "Велосипед Dewolf Grow 40",
+      "slug": "velosiped_dewolf_grow_40",
+      "description": "Хардтейл для езды в стиле кросс-кантри с оборудованием предпрофессионального класса Shimano, 30 скоростей. Технические особенности: алюминиевая рама Ultra Alloy 6061, амортизационная вилка Mode MD-993ST RLO 29 с ходом 100 мм и удаленной блокировкой, двойные алюминиевые обода Zhili ZLA-060, дисковые гидравлические тормоза Shimano MT-200. Подходит для активной езды по различным дорогам и пересеченной местности. Диаметр колес - 29 дюймов. Вес - 14,9 кг.",
+      "price": 77990,
+      "discount": 15,
+      "quantity": 1,
+      "category": 5,
+      "image": "product_images/velosiped_dewolf_grow_40/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "name": "Велосипед Cube Attain Pro",
+      "slug": "velosiped_cube_attain_pro",
+      "description": "Шоссейный велосипед с оборудованием любительского класса Shimano, 18 скоростей. Технические особенности: алюминиевая рама Aluminium 6061 T6, жесткая карбоновая вилка CUBE CSL Race Disc, двойные обода CUBE RA 1.9 Aero Disc, дисковые механические тормоза TRP Spyre MD-C610C. Подходит для быстрой спортивной езды по шоссе. Диаметр колес - 28 дюймов. Вес - 10,2 кг.",
+      "price": 170600,
+      "discount": 7,
+      "quantity": 1,
+      "category": 6,
+      "image": "product_images/velosiped_cube_attain_pro/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "name": "Велосипед Aspect Discovery",
+      "slug": "velosiped_aspect_discovery",
+      "description": "Велосипед повышенной проходимости (фэтбайк) с оборудованием любительского класса Shimano, 8 скоростей. Технические особенности: алюминиевая рама Alu 6061 Hydroformed, жесткая вилка Alu 6061 Fatbike, обода Alloy FAT Holes, дисковые гидравлические тормоза Tektro HD-M275. Подходит для езды по всем типам дорожного покрытия в различных погодных условиях (дождь, снег). Диаметр колес - 26 дюймов. Вес - 15,44 кг.",
+      "price": 59490,
+      "discount": 12,
+      "quantity": 2,
+      "category": 5,
+      "image": "product_images/velosiped_aspect_discovery/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "name": "Велосипед Stinger Laguna Pro 26",
+      "slug": "velosiped_stinger_laguna_pro_26",
+      "description": "Женский горный велосипед с навесным оборудованием Shimano, 21 скорость. Технические особенности: алюминиевая рама AL-6061, амортизационная вилка Stinger SF300, двойные алюминиевые обода Felgebeiter VB-18, дисковые гидравлические тормоза Shimano MT200. Подходит для прогулочной езды по различным дорогам и пересеченной местности. Диаметр колес - 26 дюймов. Вес - 15,4 кг.",
+      "price": 35040,
+      "discount": 15,
+      "quantity": 5,
+      "category": 5,
+      "image": "product_images/velosiped_stinger_laguna_pro_26/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "name": "Велосипед Altair MTB HT 27.5 1.0",
+      "slug": "velosiped_altair_mtb_ht_275_10",
+      "description": "Горный велосипед для начинающих с навесным оборудованием Sun Run, 21 скорость. Технические особенности: стальная рама Hi-Ten, амортизационная вилка Altair 286, двойные алюминиевые обода, надежные ободные тормоза Yinchi YX-C18 V-Brake. Подходит для прогулочной езды по различным дорогам и пересеченной местности. Диаметр колес - 27,5 дюймов. Вес - 17,2 кг.",
+      "price": 18690,
+      "discount": 0,
+      "quantity": 10,
+      "category": 5,
+      "image": "product_images/velosiped_altair_mtb_ht_275_10/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "name": "Велосипед Stels XT280 V010",
+      "slug": "velosiped_stels_xt280_v010",
+      "description": "Шоссейный велосипед начального уровня с навесным оборудованием Shimano, 14 скоростей. Технические особенности: алюминиевая рама X6, жесткая вилка, двойные алюминиевые обода, надежные ободные тормоза клещевого типа U-типа. Подходит для быстрой спортивной езды по шоссе. Диаметр колес - 28 дюймов. Вес - 12,5 кг.",
+      "price": 57410,
+      "discount": 10,
+      "quantity": 3,
+      "category": 6,
+      "image": "product_images/velosiped_stels_xt280_v010/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+      "name": "Велосипед Bear Bike Minsk",
+      "slug": "velosiped_bear_bike_minsk",
+      "description": "Шоссейный велосипед с оборудованием начального класса LTWOO, 14 скоростей. Технические особенности: стальная рама Hi-Ten, жесткая стальная вилка Hi-Ten, двойные алюминиевые обода, надежные ободные тормоза клещевого типа Tektro. Подходит для прогулочного и спортивного катания в городских условиях. Диаметр колес - 28 дюймов. Вес - 12 кг.",
+      "price": 48700,
+      "discount": 12,
+      "quantity": 7,
+      "category": 6,
+      "image": "product_images/velosiped_bear_bike_minsk/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+      "name": "Велосипед Bear Bike Milan",
+      "slug": "velosiped_bear_bike_milan",
+      "description": "Шоссейный велосипед для катания в городской среде без переключения передач. Технические особенности: хромолевая рама, жесткая хромолевая вилка, двойные алюминиевые обода, надежные ободные тормоза клещевого типа Tektro R326. Подходит для прогулочного и спортивного катания в городских условиях. Диаметр колес - 28 дюймов. Вес - 9,5 кг.",
+      "price": 48300,
+      "discount": 4,
+      "quantity": 9,
+      "category": 6,
+      "image": "product_images/velosiped_bear_bike_milan/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+      "name": "Велосипед Stels Pilot 370 16 V010",
+      "slug": "velosiped_stels_pilot_370_16_v010",
+      "description": "Складной прогулочный велосипед с оборудованием начального класса Shimano, 6 скоростей. Технические особенности: складная алюминиевая рама, жесткая вилка, двойные алюминиевые обода, надежные ободные тормоза V-Brake, багажник, крылья, подножка. Подходит для прогулочного катания в городских условиях. Диаметр колес - 16 дюймов. Вес - 12,72 кг.",
+      "price": 32690,
+      "discount": 3,
+      "quantity": 18,
+      "category": 7,
+      "image": "product_images/velosiped_stels_pilot_370_16_v010/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+      "name": "Велосипед Stels Pilot 360 14 V010",
+      "slug": "velosiped_stels_pilot_360_14_v010",
+      "description": "Складной прогулочный велосипед без переключения передач. Технические особенности: складная алюминиевая рама, жесткая стальная вилка, двойные алюминиевые обода, надежные ободные тормоза V-типа, крылья, подножка. Подходит для прогулочного катания в городских условиях. Диаметр колес - 14 дюймов. Вес - 9,5 кг.",
+      "price": 29130,
+      "discount": 8,
+      "quantity": 13,
+      "category": 7,
+      "image": "product_images/velosiped_stels_pilot_360_14_v010/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+      "name": "Велосипед Forward Arsenal 20 1.0",
+      "slug": "velosiped_forward_arsenal_20_10",
+      "description": "Складной прогулочный велосипед без переключения передач. Технические особенности: прочная стальная рама, жесткая вилка, двойные обода FWD Double Wall, ножные педальные тормоза, защита цепи, багажник, длинные стальные крылья, звонок, подножка. Подходит для прогулочной езды по шоссе и несложной пересеченной местности. Диаметр колес - 20 дюйма. Вес - 13,9 кг.",
+      "price": 11880,
+      "discount": 0,
+      "quantity": 6,
+      "category": 7,
+      "image": "product_images/velosiped_forward_arsenal_20_10/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+      "name": "Велосипед Altair City 24",
+      "slug": "velosiped_altair_city_24",
+      "description": "Складной прогулочный велосипед без переключения передач. Технические особенности: стальная рама Hi-ten, жесткая стальная вилка, двойные обода Altair Double Wall, ножные педальные тормоза, длинные крылья, багажник, комфортное седло, звонок, подножка. Подходит для прогулочной езды по шоссе и ровным проселочным дорогам. Диаметр колес - 24 дюйма. Вес - 15,7 кг.",
+      "price": 11190,
+      "discount": 0,
+      "quantity": 14,
+      "category": 7,
+      "image": "product_images/velosiped_altair_city_24/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+      "name": "Велосипед Atom Team",
+      "slug": "velosiped_atom_team",
+      "description": "Экстремальный велосипед BMX без переключения передач. Технические особенности: хромолевая рама Cr-Mo, жесткая стальная вилка, двойные алюминиевые обода Atom PRK, задний клещевой тормоз Atom Nitros U-Brake. Подходит для экстремального катания в городских условиях или в специальных парках. Диаметр колес - 20 дюймов. Вес - 12 кг.",
+      "price": 29990,
+      "discount": 4,
+      "quantity": 8,
+      "category": 8,
+      "image": "product_images/velosiped_atom_team/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 19,
+    "fields": {
+      "name": "Велосипед Haro Shredder Pro 20",
+      "slug": "velosiped_haro_shredder_pro_20",
+      "description": "Экстремальный велосипед BMX без переключения передач. Технические особенности: стальная рама Full Hi-Ten Frame, жесткая стальная вилка Full Hi-Ten, усиленные алюминиевые обода, надежные ободные тормоза Tektro Alloy 990 U-Brake (задний). Подходит для экстремального катания в городских условиях или в специальных парках. Диаметр колес - 20 дюймов. Вес - 11,57 кг.",
+      "price": 24100,
+      "discount": 6,
+      "quantity": 2,
+      "category": 8,
+      "image": "product_images/velosiped_haro_shredder_pro_20/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 20,
+    "fields": {
+      "name": "Велосипед Stark Madness BMX 1",
+      "slug": "velosiped_stark_madness_bmx_1",
+      "description": "Экстремальный велосипед BMX без переключения передач. Технические особенности: стальная рама Hi-Ten, жесткая стальная вилка Stark Rigid Hi-Ten, двойные алюминиевые обода YXR M-25, надежные ободные тормоза клещевого типа Sparkle U-969D U-brake. Подходит для экстремального катания в городских условиях или в специальных парках. Диаметр колес - 20 дюймов. Вес - 12,6 кг.",
+      "price": 21430,
+      "discount": 0,
+      "quantity": 9,
+      "category": 8,
+      "image": "product_images/velosiped_stark_madness_bmx_1/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 21,
+    "fields": {
+      "name": "Велосипед Stark Madness BMX 2",
+      "slug": "velosiped_stark_madness_bmx_2",
+      "description": "Экстремальный велосипед BMX без переключения передач. Технические особенности: стальная рама Hi-Ten, жесткая стальная вилка Stark Rigid Hi-Ten, двойные алюминиевые обода YXR M-25, надежные ободные тормоза клещевого типа Sparkle U-969D U-brake, пеги, гироротор. Подходит для экстремального катания в городских условиях или в специальных парках. Диаметр колес - 20 дюймов. Вес - 12,5 кг.",
+      "price": 17850,
+      "discount": 0,
+      "quantity": 6,
+      "category": 8,
+      "image": "product_images/velosiped_stark_madness_bmx_2/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 22,
+    "fields": {
+      "name": "Велосипед Giant ARX F/W 16",
+      "slug": "velosiped_giant_arx_fw_16",
+      "description": "Велосипед, предназначенный для детей в возрасте от трех до шести лет, без переключения передач. Технические особенности: алюминиевая рама ALUXX-Grade Aluminum, жесткая алюминиевая вилка Giant Rigid alloy, двойные алюминиевые обода, надежные ободные тормоза Alloy linear pull, защита цепи. Подходит для обучения и прогулочного катания в городских условиях. Диаметр колес - 16 дюймов. Вес - 8,6 кг.",
+      "price": 26640,
+      "discount": 14,
+      "quantity": 1,
+      "category": 4,
+      "image": "product_images/velosiped_giant_arx_fw_16/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 23,
+    "fields": {
+      "name": "Велосипед Novatrack Shark 20 6sp",
+      "slug": "velosiped_novatrack_shark_20_6sp",
+      "description": "Двухподвес, предназначенный для детей в возрасте от пяти до девяти лет, с навесным оборудованием Power, 6 скоростей. Технические особенности: прочная стальная рама, амортизационная вилка, задний амортизатор, двойные алюминиевые обода, надежные ободные тормоза V-brake, защита заднего переключателя, звонок, подножка, крылья. Подходит для обучения и прогулочного катания в городских условиях. Диаметр колес - 20 дюймов. Вес - 14,2 кг.",
+      "price": 20670,
+      "discount": 8,
+      "quantity": 4,
+      "category": 4,
+      "image": "product_images/velosiped_novatrack_shark_20_6sp/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 24,
+    "fields": {
+      "name": "Велосипед Royal Baby Space 14",
+      "slug": "velosiped_royal_baby_space_14",
+      "description": "Велосипед, предназначенный для детей в возрасте от двух до четырех лет, без переключения передач. Технические особенности: алюминиевая рама, жесткая стальная вилка, одинарные обода, передний тормоз - ободной V-Brake, задний - ножной, полная защита цепи, съемные боковые колеса, поддерживающая ручка, держатель для бутылочки, звонок. Подходит для обучения и легких прогулок. Диаметр колес - 14 дюймов. Вес - 9 кг.",
+      "price": 17500,
+      "discount": 0,
+      "quantity": 6,
+      "category": 4,
+      "image": "product_images/velosiped_royal_baby_space_14/1.jpg"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 25,
+    "fields": {
+      "name": "Велосипед Forward Azure 18",
+      "slug": "velosiped_forward_azure_18",
+      "description": "Велосипед, предназначенный для детей в возрасте от четырех до восьми лет, без переключения передач. Технические особенности: стальная рама, жесткая стальная вилка, одинарные обода, ножные педальные тормоза, полная защита цепи, съемные боковые колеса, длинные крылья, мягкая накладка на руле, багажник, звонок. Подходит для обучения и прогулочного катания в городских условиях. Диаметр колес - 18 дюймов. Вес - 11 кг.",
+      "price": 9680,
+      "discount": 0,
+      "quantity": 20,
+      "category": 4,
+      "image": "product_images/velosiped_forward_azure_18/1.jpg"
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 30,
+    "fields": {
+      "image": "product_images/velosiped_cube_reaction_pro_275/2.jpg",
+      "product": 1
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 31,
+    "fields": {
+      "image": "product_images/velosiped_cube_reaction_pro_275/3.jpg",
+      "product": 1
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 32,
+    "fields": {
+      "image": "product_images/velosiped_cube_reaction_pro_275/4.jpg",
+      "product": 1
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 33,
+    "fields": {
+      "image": "product_images/velosiped_cube_reaction_pro_275/5.jpg",
+      "product": 1
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 34,
+    "fields": {
+      "image": "product_images/velosiped_trek_wahoo_20/2.jpg",
+      "product": 2
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 35,
+    "fields": {
+      "image": "product_images/velosiped_trek_wahoo_20/3.jpg",
+      "product": 2
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 36,
+    "fields": {
+      "image": "product_images/velosiped_trek_wahoo_20/4.jpg",
+      "product": 2
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 37,
+    "fields": {
+      "image": "product_images/velosiped_trek_wahoo_20/5.jpg",
+      "product": 2
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 38,
+    "fields": {
+      "image": "product_images/velosiped_dahon_qix_d3/2.jpg",
+      "product": 3
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 39,
+    "fields": {
+      "image": "product_images/velosiped_trek_checkpoint_alr_5/2.jpg",
+      "product": 4
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 40,
+    "fields": {
+      "image": "product_images/velosiped_trek_checkpoint_alr_5/3.jpg",
+      "product": 4
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 41,
+    "fields": {
+      "image": "product_images/velosiped_trek_checkpoint_alr_5/4.jpg",
+      "product": 4
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 42,
+    "fields": {
+      "image": "product_images/velosiped_trek_checkpoint_alr_5/5.jpg",
+      "product": 4
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 43,
+    "fields": {
+      "image": "product_images/velosiped_forward_zigzag_20/2.jpg",
+      "product": 5
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 44,
+    "fields": {
+      "image": "product_images/velosiped_forward_zigzag_20/3.jpg",
+      "product": 5
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 45,
+    "fields": {
+      "image": "product_images/velosiped_forward_zigzag_20/4.jpg",
+      "product": 5
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 46,
+    "fields": {
+      "image": "product_images/velosiped_forward_zigzag_20/5.jpg",
+      "product": 5
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 47,
+    "fields": {
+      "image": "product_images/velosiped_dewolf_grow_40/2.jpg",
+      "product": 6
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 48,
+    "fields": {
+      "image": "product_images/velosiped_dewolf_grow_40/3.jpg",
+      "product": 6
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 49,
+    "fields": {
+      "image": "product_images/velosiped_dewolf_grow_40/4.jpg",
+      "product": 6
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 50,
+    "fields": {
+      "image": "product_images/velosiped_dewolf_grow_40/5.jpg",
+      "product": 6
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 51,
+    "fields": {
+      "image": "product_images/velosiped_cube_attain_pro/2.jpg",
+      "product": 7
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 52,
+    "fields": {
+      "image": "product_images/velosiped_cube_attain_pro/3.jpg",
+      "product": 7
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 53,
+    "fields": {
+      "image": "product_images/velosiped_cube_attain_pro/4.jpg",
+      "product": 7
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 54,
+    "fields": {
+      "image": "product_images/velosiped_cube_attain_pro/5.jpg",
+      "product": 7
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 55,
+    "fields": {
+      "image": "product_images/velosiped_aspect_discovery/2.jpg",
+      "product": 8
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 56,
+    "fields": {
+      "image": "product_images/velosiped_aspect_discovery/3.jpg",
+      "product": 8
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 57,
+    "fields": {
+      "image": "product_images/velosiped_aspect_discovery/4.jpg",
+      "product": 8
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 58,
+    "fields": {
+      "image": "product_images/velosiped_aspect_discovery/5.jpg",
+      "product": 8
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 59,
+    "fields": {
+      "image": "product_images/velosiped_stinger_laguna_pro_26/2.jpg",
+      "product": 9
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 60,
+    "fields": {
+      "image": "product_images/velosiped_altair_mtb_ht_275_10/2.jpg",
+      "product": 10
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 61,
+    "fields": {
+      "image": "product_images/velosiped_altair_mtb_ht_275_10/3.jpg",
+      "product": 10
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 62,
+    "fields": {
+      "image": "product_images/velosiped_altair_mtb_ht_275_10/4.jpg",
+      "product": 10
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 63,
+    "fields": {
+      "image": "product_images/velosiped_stels_xt280_v010/2.jpg",
+      "product": 11
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 64,
+    "fields": {
+      "image": "product_images/velosiped_stels_xt280_v010/3.jpg",
+      "product": 11
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 65,
+    "fields": {
+      "image": "product_images/velosiped_stels_xt280_v010/4.jpg",
+      "product": 11
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 66,
+    "fields": {
+      "image": "product_images/velosiped_stels_xt280_v010/5.jpg",
+      "product": 11
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 67,
+    "fields": {
+      "image": "product_images/velosiped_bear_bike_minsk/2.jpg",
+      "product": 12
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 68,
+    "fields": {
+      "image": "product_images/velosiped_bear_bike_minsk/3.jpg",
+      "product": 12
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 69,
+    "fields": {
+      "image": "product_images/velosiped_bear_bike_minsk/4.jpg",
+      "product": 12
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 70,
+    "fields": {
+      "image": "product_images/velosiped_bear_bike_minsk/5.jpg",
+      "product": 12
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 71,
+    "fields": {
+      "image": "product_images/velosiped_bear_bike_milan/2.jpg",
+      "product": 13
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 72,
+    "fields": {
+      "image": "product_images/velosiped_bear_bike_milan/3.jpg",
+      "product": 13
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 73,
+    "fields": {
+      "image": "product_images/velosiped_bear_bike_milan/4.jpg",
+      "product": 13
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 74,
+    "fields": {
+      "image": "product_images/velosiped_bear_bike_milan/5.jpg",
+      "product": 13
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 75,
+    "fields": {
+      "image": "product_images/velosiped_stels_pilot_370_16_v010/2.jpg",
+      "product": 14
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 76,
+    "fields": {
+      "image": "product_images/velosiped_stels_pilot_370_16_v010/3.jpg",
+      "product": 14
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 77,
+    "fields": {
+      "image": "product_images/velosiped_stels_pilot_370_16_v010/4.jpg",
+      "product": 14
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 78,
+    "fields": {
+      "image": "product_images/velosiped_stels_pilot_370_16_v010/5.jpg",
+      "product": 14
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 79,
+    "fields": {
+      "image": "product_images/velosiped_stels_pilot_360_14_v010/2.jpg",
+      "product": 15
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 80,
+    "fields": {
+      "image": "product_images/velosiped_stels_pilot_360_14_v010/3.jpg",
+      "product": 15
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 81,
+    "fields": {
+      "image": "product_images/velosiped_stels_pilot_360_14_v010/4.jpg",
+      "product": 15
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 82,
+    "fields": {
+      "image": "product_images/velosiped_forward_arsenal_20_10/2.jpg",
+      "product": 16
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 83,
+    "fields": {
+      "image": "product_images/velosiped_forward_arsenal_20_10/3.jpg",
+      "product": 16
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 84,
+    "fields": {
+      "image": "product_images/velosiped_forward_arsenal_20_10/4.jpg",
+      "product": 16
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 85,
+    "fields": {
+      "image": "product_images/velosiped_forward_arsenal_20_10/5.jpg",
+      "product": 16
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 86,
+    "fields": {
+      "image": "product_images/velosiped_altair_city_24/2.jpg",
+      "product": 17
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 87,
+    "fields": {
+      "image": "product_images/velosiped_altair_city_24/3.jpg",
+      "product": 17
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 88,
+    "fields": {
+      "image": "product_images/velosiped_altair_city_24/4.jpg",
+      "product": 17
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 89,
+    "fields": {
+      "image": "product_images/velosiped_altair_city_24/5.jpg",
+      "product": 17
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 90,
+    "fields": {
+      "image": "product_images/velosiped_atom_team/2.jpg",
+      "product": 18
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 91,
+    "fields": {
+      "image": "product_images/velosiped_atom_team/3.jpg",
+      "product": 18
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 92,
+    "fields": {
+      "image": "product_images/velosiped_atom_team/4.jpg",
+      "product": 18
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 93,
+    "fields": {
+      "image": "product_images/velosiped_atom_team/5.jpg",
+      "product": 18
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 94,
+    "fields": {
+      "image": "product_images/velosiped_haro_shredder_pro_20/2.jpg",
+      "product": 19
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 95,
+    "fields": {
+      "image": "product_images/velosiped_haro_shredder_pro_20/3.jpg",
+      "product": 19
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 96,
+    "fields": {
+      "image": "product_images/velosiped_haro_shredder_pro_20/4.jpg",
+      "product": 19
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 97,
+    "fields": {
+      "image": "product_images/velosiped_haro_shredder_pro_20/5.jpg",
+      "product": 19
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 98,
+    "fields": {
+      "image": "product_images/velosiped_stark_madness_bmx_1/2.jpg",
+      "product": 20
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 99,
+    "fields": {
+      "image": "product_images/velosiped_stark_madness_bmx_1/3.jpg",
+      "product": 20
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 100,
+    "fields": {
+      "image": "product_images/velosiped_stark_madness_bmx_1/4.jpg",
+      "product": 20
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 101,
+    "fields": {
+      "image": "product_images/velosiped_stark_madness_bmx_1/5.jpg",
+      "product": 20
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 102,
+    "fields": {
+      "image": "product_images/velosiped_stark_madness_bmx_2/2.jpg",
+      "product": 21
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 103,
+    "fields": {
+      "image": "product_images/velosiped_stark_madness_bmx_2/3.jpg",
+      "product": 21
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 104,
+    "fields": {
+      "image": "product_images/velosiped_giant_arx_fw_16/2.jpg",
+      "product": 22
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 105,
+    "fields": {
+      "image": "product_images/velosiped_giant_arx_fw_16/3.jpg",
+      "product": 22
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 106,
+    "fields": {
+      "image": "product_images/velosiped_giant_arx_fw_16/4.jpg",
+      "product": 22
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 107,
+    "fields": {
+      "image": "product_images/velosiped_giant_arx_fw_16/5.jpg",
+      "product": 22
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 108,
+    "fields": {
+      "image": "product_images/velosiped_novatrack_shark_20_6sp/2.jpg",
+      "product": 23
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 109,
+    "fields": {
+      "image": "product_images/velosiped_novatrack_shark_20_6sp/3.jpg",
+      "product": 23
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 110,
+    "fields": {
+      "image": "product_images/velosiped_novatrack_shark_20_6sp/4.jpg",
+      "product": 23
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 111,
+    "fields": {
+      "image": "product_images/velosiped_novatrack_shark_20_6sp/5.jpg",
+      "product": 23
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 112,
+    "fields": {
+      "image": "product_images/velosiped_royal_baby_space_14/2.jpg",
+      "product": 24
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 113,
+    "fields": {
+      "image": "product_images/velosiped_royal_baby_space_14/3.jpg",
+      "product": 24
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 114,
+    "fields": {
+      "image": "product_images/velosiped_royal_baby_space_14/4.jpg",
+      "product": 24
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 115,
+    "fields": {
+      "image": "product_images/velosiped_royal_baby_space_14/5.jpg",
+      "product": 24
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 116,
+    "fields": {
+      "image": "product_images/velosiped_forward_azure_18/2.jpg",
+      "product": 25
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 117,
+    "fields": {
+      "image": "product_images/velosiped_forward_azure_18/3.jpg",
+      "product": 25
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 118,
+    "fields": {
+      "image": "product_images/velosiped_forward_azure_18/4.jpg",
+      "product": 25
+    }
+  },
+  {
+    "model": "products.image",
+    "pk": 119,
+    "fields": {
+      "image": "product_images/velosiped_forward_azure_18/5.jpg",
+      "product": 25
+    }
+  }
+]
