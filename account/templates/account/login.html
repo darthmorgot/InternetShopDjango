@@ -18,9 +18,15 @@
           <p>Если у вас есть учетная запись, пожалуйста, войдите в систему.</p>
         </div><!-- End .heading -->
 
-        <form action="#">
-          <input type="email" class="form-control" placeholder="Email" required>
-          <input type="password" class="form-control" placeholder="Пароль" required>
+        <form action="{% url 'login' %}" method="post">
+          {% csrf_token %}
+
+          <div class="form-error">{{ form.non_field_errors }}</div>
+
+          {% for f in form %}
+          {{ f }}
+          <div class="form-error">{{ f.errors }}</div>
+          {% endfor %}
 
           <div class="form-footer">
             <button type="submit" class="btn btn-primary">Войти</button>
