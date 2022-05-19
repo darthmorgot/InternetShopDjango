@@ -1,8 +1,9 @@
+from django.contrib.auth.views import LoginView
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView
 
+from account.forms import UserLoginForm
 from products.models import Category
-
-categories = Category.objects.all()
 
 
 class DashboardPageView(TemplateView):
@@ -12,7 +13,7 @@ class DashboardPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Личный кабинет'
         context['cart_range'] = range(1, 3)
-        context['categories'] = categories
+        context['categories'] = Category.objects.all()
         return context
 
 
@@ -23,19 +24,23 @@ class ForgotPasswordPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Сброс пароля'
         context['cart_range'] = range(1, 3)
-        context['categories'] = categories
+        context['categories'] = Category.objects.all()
         return context
 
 
-class LoginPageView(TemplateView):
+class LoginPageView(LoginView):
+    form_class = UserLoginForm
     template_name = 'account/login.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Вход'
         context['cart_range'] = range(1, 3)
-        context['categories'] = categories
+        context['categories'] = Category.objects.all()
         return context
+
+    def get_success_url(self):
+        return reverse_lazy('home')
 
 
 class AccountPageView(TemplateView):
@@ -45,5 +50,5 @@ class AccountPageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Учетная запись'
         context['cart_range'] = range(1, 3)
-        context['categories'] = categories
+        context['categories'] = Category.objects.all()
         return context
