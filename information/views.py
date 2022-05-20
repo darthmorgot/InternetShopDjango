@@ -1,48 +1,46 @@
 from django.views.generic import TemplateView, ListView
 
 from products.models import Category, Product
+from utils.utils import DataMixin
 
 
-class HomePageView(ListView):
+class HomePageView(DataMixin, ListView):
     model = Product
     template_name = 'information/index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Главная'
-        context['categories'] = Category.objects.all()
-        context['cart_range'] = range(1, 3)
         context['products'] = Product.objects.all()[:6]
-        return context
+        data = self.get_user_context(title='Главная')
+        return {**context, **data}
+        # context['title'] = 'Главная'
+        # context['categories'] = Category.objects.all()
+        # context['cart_range'] = range(1, 3)
+        # return context
 
 
-class AboutPageView(TemplateView):
+class AboutPageView(DataMixin, TemplateView):
     template_name = 'information/about.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'О нас'
-        context['cart_range'] = range(1, 3)
-        context['categories'] = Category.objects.all()
-        return context
+        data = self.get_user_context(title='О нас')
+        return {**context, **data}
 
 
-class ContactPageView(TemplateView):
+class ContactPageView(DataMixin, TemplateView):
     template_name = 'information/contact.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Контакты'
-        context['cart_range'] = range(1, 3)
-        context['categories'] = Category.objects.all()
-        return context
+        data = self.get_user_context(title='Контакты')
+        return {**context, **data}
 
 
-class PageDevelopmentView(TemplateView):
+class PageDevelopmentView(DataMixin, TemplateView):
     template_name = 'information/page_development.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Страница в разработке'
-        context['categories'] = Category.objects.all()
-        return context
+        data = self.get_user_context(title='Страница в разработке')
+        return {**context, **data}

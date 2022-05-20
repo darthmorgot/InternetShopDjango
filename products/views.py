@@ -1,6 +1,7 @@
 from django.views.generic import DetailView, ListView
 
 from products.models import Category, Product, Image
+from utils.utils import DataMixin
 
 
 class ProductQuickViewView(DetailView):
@@ -14,7 +15,7 @@ class ProductQuickViewView(DetailView):
         return context
 
 
-class CatalogPageView(ListView):
+class CatalogPageView(DataMixin, ListView):
     model = Product
     template_name = 'products/catalog.html'
     paginate_by = 4
@@ -22,25 +23,21 @@ class CatalogPageView(ListView):
     def get_context_data(self, **kwargs):
         products = Product.objects.all()
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Каталог'
-        context['cart_range'] = range(1, 3)
-        context['categories'] = Category.objects.all()
         context['products'] = products
         context['number_products'] = products.count()
-        return context
+        data = self.get_user_context(title='Каталог')
+        return {**context, **data}
 
 
-class ProductPageView(DetailView):
+class ProductPageView(DataMixin, DetailView):
     model = Product
     template_name = 'products/product.html'
     pk_url_kwarg = 'product_id'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Товар'
-        context['cart_range'] = range(1, 3)
-        context['categories'] = Category.objects.all()
         context['product'] = Product.objects.get(pk=self.kwargs['product_id'])
         context['products'] = Product.objects.all()[:6]
         context['images'] = Image.objects.filter(product__pk=self.kwargs['product_id'])
-        return context
+        data = self.get_user_context(title='Товар')
+        return {**context, **data}
