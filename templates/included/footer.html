@@ -99,8 +99,10 @@
                 {% include 'included/category_menu.html' with cat_name='Прочие товары' %}
                 <ul class="col-md-6 col-sm-6">
                   <li><a class="col-title">Аккаунт</a></li>
+                  {% if user.is_authenticated %}
                   <li><a href="{% url 'dashboard' %}">Личный кабинет</a></li>
                   <li><a href="{% url 'page_development' %}">Отслеживание заказа</a></li>
+                  {% endif %}
                   <li><a href="{% url 'page_development' %}">Поддержка</a></li>
                   <li><a href="{% url 'page_development' %}">Способы оплаты</a></li>
                   <li><a href="{% url 'page_development' %}">Способы доставки</a></li>
