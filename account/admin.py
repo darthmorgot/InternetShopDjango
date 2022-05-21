@@ -17,3 +17,7 @@ class UserAdmin(admin.ModelAdmin):
 
 
 admin.site.register(User, UserAdmin)
+
+admin.site.site_header = 'Админ-панель интернет-магазина VeloSam'
+admin.site.site_title = 'Админ-панель интернет-магазина VeloSam'
+admin.site.index_title = 'Администрирование интернет-магазина VeloSam'
