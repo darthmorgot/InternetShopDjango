@@ -19,7 +19,7 @@
         <div class="header-right">
           <ul>
             {% if user.is_authenticated %}
-            <li>{{ user.first_name }}</li>
+            <li>{{ user.first_name }} {{ user.last_name }}</li>
             <li><a href="{% url 'dashboard' %}">Личный кабинет</a></li>
             <li><a href="{% url 'logout' %}">Выход</a></li>
             {% else %}
