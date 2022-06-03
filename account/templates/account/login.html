@@ -24,9 +24,9 @@
 
           <div class="form-error">{{ form.non_field_errors }}</div>
 
-          {% for f in form %}
-          {{ f }}
-          <div class="form-error">{{ f.errors }}</div>
+          {% for field in form %}
+          {{ field }}
+          <div class="form-error">{{ field.errors }}</div>
           {% endfor %}
           {% endcomment %}
 
@@ -52,10 +52,16 @@
 
           <div class="form-error">{{ form.non_field_errors }}</div>
 
-          {% for f in form %}
-          {{ f }}
-          <div class="form-error">{{ f.errors }}</div>
+          {% for field in form %}
+          {{ field }}
+          <div class="form-error">{{ field.errors }}</div>
           {% endfor %}
+
+<!--          <input type="text" class="form-control" placeholder="Имя" required>-->
+<!--          <input type="text" class="form-control" placeholder="Фамилия" required>-->
+<!--          <input type="email" class="form-control" placeholder="Email" required>-->
+<!--          <input type="password" class="form-control" placeholder="Пароль" required>-->
+<!--          <input type="password" class="form-control" placeholder="Подтвердите пароль" required>-->
 
           <div class="form-footer">
             <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
