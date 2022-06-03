@@ -5,7 +5,7 @@ from account.models import User
 
 class UserAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ('email', 'password')}),
+        (None, {'fields': ('email', 'password', 'username')}),
         ('Персональные данные', {'fields': ('first_name', 'last_name')}),
         ('Права доступа', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Временные метки', {'fields': ('last_login', 'date_joined')}),
