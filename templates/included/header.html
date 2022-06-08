@@ -23,7 +23,7 @@
             <li><a href="{% url 'dashboard' %}">Личный кабинет</a></li>
             <li><a href="{% url 'logout' %}">Выход</a></li>
             {% else %}
-            <li><a href="{% url 'login' %}">Вход</a></li>
+            <li><a href="{% url 'login_register' %}">Вход</a></li>
             {% endif %}
             <li><a href="{% url 'contact' %}">Контакты</a></li>
           </ul>
