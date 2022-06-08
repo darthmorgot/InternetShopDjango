@@ -18,20 +18,15 @@
           <p>Если у вас есть учетная запись, пожалуйста, войдите в систему.</p>
         </div><!-- End .heading -->
 
-        <form action="{% url 'login' %}" method="post">
-          {% comment %}
+        <form action="{% url 'login_form' %}" method="post">
           {% csrf_token %}
 
-          <div class="form-error">{{ form.non_field_errors }}</div>
+          <div class="form-error">{{ login_form.non_field_errors }}</div>
 
-          {% for field in form %}
+          {% for field in login_form %}
           {{ field }}
           <div class="form-error">{{ field.errors }}</div>
           {% endfor %}
-          {% endcomment %}
-
-          <input type="email" class="form-control" placeholder="Email" required>
-          <input type="password" class="form-control" placeholder="Пароль" required>
 
           <div class="form-footer">
             <button type="submit" class="btn btn-primary">Войти</button>
@@ -47,21 +42,15 @@
             несколько адресов доставки, просматривать и отслеживать свои заказы в личном кабинете и многое другое.</p>
         </div><!-- End .heading -->
 
-        <form action="{% url 'login' %}" method="post">
+        <form action="{% url 'register_form' %}" method="post">
           {% csrf_token %}
 
-          <div class="form-error">{{ form.non_field_errors }}</div>
+          <div class="form-error">{{ register_form.non_field_errors }}</div>
 
-          {% for field in form %}
+          {% for field in register_form %}
           {{ field }}
           <div class="form-error">{{ field.errors }}</div>
           {% endfor %}
-
-<!--          <input type="text" class="form-control" placeholder="Имя" required>-->
-<!--          <input type="text" class="form-control" placeholder="Фамилия" required>-->
-<!--          <input type="email" class="form-control" placeholder="Email" required>-->
-<!--          <input type="password" class="form-control" placeholder="Пароль" required>-->
-<!--          <input type="password" class="form-control" placeholder="Подтвердите пароль" required>-->
 
           <div class="form-footer">
             <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
