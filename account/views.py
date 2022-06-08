@@ -1,11 +1,11 @@
 from django.contrib.auth import login
 from django.contrib.auth.views import LoginView, LogoutView
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView
 
 from account.forms import UserLoginForm, UserRegistrationForm
-from utils.utils import DataMixin
+from utils.utils import DataMixin, get_context
 
 
 class DashboardPageView(DataMixin, TemplateView):
@@ -49,6 +49,10 @@ class UserRegistration(DataMixin, CreateView):
         login(self.request, user)
         return redirect('home')
 
+    def form_invalid(self, form):
+        print('invalid:', form.errors)
+        return redirect('login_register')
+
 
 class LoginPageView(DataMixin, LoginView):
     form_class = UserLoginForm
@@ -62,6 +66,30 @@ class LoginPageView(DataMixin, LoginView):
     def get_success_url(self):
         return reverse_lazy('home')
 
+    def form_invalid(self, form):
+        print('invalid:', form.errors)
+        return redirect('login_register')
+
 
 class UserLogout(LogoutView):
     next_page = reverse_lazy('home')
+
+
+def login_register_user(request):
+    # login_form = LoginPageView.as_view()(request)
+    # register_form = UserRegistration.as_view()(request)
+    login_form = UserLoginForm()
+    register_form = UserRegistrationForm()
+
+    data = get_context(title='Вход-Регистрация')
+
+    context = {
+        # 'register_form': register_form.context_data['form'],
+        # 'login_form': login_form.context_data['form'],
+        'register_form': register_form,
+        'login_form': login_form,
+    }
+
+    context = {**context, **data}
+
+    return render(request, 'account/login.html', context=context)
