@@ -76,16 +76,12 @@ class UserLogout(LogoutView):
 
 
 def login_register_user(request):
-    # login_form = LoginPageView.as_view()(request)
-    # register_form = UserRegistration.as_view()(request)
     login_form = UserLoginForm()
     register_form = UserRegistrationForm()
 
     data = get_context(title='Вход-Регистрация')
 
     context = {
-        # 'register_form': register_form.context_data['form'],
-        # 'login_form': login_form.context_data['form'],
         'register_form': register_form,
         'login_form': login_form,
     }
