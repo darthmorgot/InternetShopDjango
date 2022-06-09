@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from account.models import User
+from account.models import User, Address
 
 
 class UserAdmin(admin.ModelAdmin):
@@ -16,7 +16,12 @@ class UserAdmin(admin.ModelAdmin):
     ordering = ['pk']
 
 
+class AddressAdmin(admin.ModelAdmin):
+    list_display = ['user', 'phone', 'city', 'street', 'house_number', 'region', 'post_code']
+
+
 admin.site.register(User, UserAdmin)
+admin.site.register(Address, AddressAdmin)
 
 admin.site.site_header = 'Админ-панель интернет-магазина VeloSam'
 admin.site.site_title = 'Админ-панель интернет-магазина VeloSam'
