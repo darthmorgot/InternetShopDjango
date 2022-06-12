@@ -29,6 +29,36 @@ class CatalogPageView(DataMixin, ListView):
         return {**context, **data}
 
 
+class CategoryPageView(DataMixin, ListView):
+    model = Product
+    template_name = 'products/catalog.html'
+    paginate_by = 4
+
+    def get_category(self):
+        return Category.objects.get(slug=self.kwargs['category_slug'])
+
+    def get_queryset(self):
+        category = self.get_category()
+        if category.parent:
+            products = Product.objects.filter(category__slug=self.kwargs['category_slug']).select_related('category')
+        else:
+            products = Product.objects.filter(category__parent_id=category.pk).select_related('category')
+        return products
+
+    def get_context_data(self, **kwargs):
+        category = self.get_category()
+        context = super().get_context_data(**kwargs)
+        if category.parent:
+            context['number_products'] = \
+                Product.objects.filter(category_id=category.pk).select_related('category').count()
+            data = self.get_user_context(title=category.parent.name + ' ' + category.name)
+        else:
+            context['number_products'] = \
+                Product.objects.filter(category__parent_id=category.pk).select_related('category').count()
+            data = self.get_user_context(title=category.name)
+        return {**context, **data}
+
+
 class ProductPageView(DataMixin, DetailView):
     model = Product
     template_name = 'products/product.html'
