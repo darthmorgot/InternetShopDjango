@@ -18,6 +18,14 @@
           <p>Если у вас есть учетная запись, пожалуйста, войдите в систему.</p>
         </div><!-- End .heading -->
 
+        {% if messages %}
+          {% for message in messages %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          <div class="alert alert-danger alert-intro" role="alert">{{ message }}</div>
+          {% endif %}
+          {% endfor %}
+        {% endif %}
+
         <form action="{% url 'login_form' %}" method="post">
           {% csrf_token %}
 
@@ -41,6 +49,14 @@
           <p>Создав учетную запись в нашем магазине, вы сможете быстрее проходить процесс оформления заказа, сохранять
             несколько адресов доставки, просматривать и отслеживать свои заказы в личном кабинете и многое другое.</p>
         </div><!-- End .heading -->
+
+        {% if messages %}
+          {% for message in messages %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+          <div class="alert alert-warning alert-intro" role="alert">{{ message }}</div>
+          {% endif %}
+          {% endfor %}
+        {% endif %}
 
         <form action="{% url 'register_form' %}" method="post">
           {% csrf_token %}
