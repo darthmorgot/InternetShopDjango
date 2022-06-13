@@ -9,15 +9,20 @@
       <div class="col-lg-9 order-lg-last dashboard-content">
         <h2>Панель управления</h2>
 
-        <div class="alert alert-success alert-intro" role="alert">
-          Спасибо за регистрацию в интернет-магазине "ВелоСам"!
-        </div><!-- End .alert -->
-
-        <div class="alert alert-success" role="alert">
-          Приветствуем, <strong>Василий Пупкин!</strong> На панели управления учетной записи у вас есть возможность
-          просмотреть вашу недавнюю активность и обновить информацию о вашей учетной записи. Выберите ссылку ниже, чтобы
-          просмотреть или отредактировать информацию.
-        </div><!-- End .alert -->
+        {% if messages %}
+          {% for message in messages %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+          <div class="alert alert-info alert-intro" role="alert">
+            Приветствуем, {{ user.first_name }} {{ user.last_name }}! На панели управления учетной записи
+            у вас есть возможность просмотреть вашу недавнюю активность и обновить информацию о вашей
+            учетной записи. Выберите ссылку ниже, чтобы просмотреть или отредактировать информацию.
+            {{ message }}
+          </div>
+          {% else %}
+          <div class="alert alert-success alert-intro" role="alert">{{ message }}</div>
+          {% endif %}
+          {% endfor %}
+        {% endif %}
 
         <div class="mb-4"></div><!-- margin -->
 
