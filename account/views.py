@@ -1,10 +1,13 @@
+from django.contrib import messages
 from django.contrib.auth import login
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, \
+    PasswordResetConfirmView, PasswordResetCompleteView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView
 
-from account.forms import UserLoginForm, UserRegistrationForm
+from account.forms import UserLoginForm, UserRegistrationForm, UserPasswordResetForm, UserPasswordResetConfirmForm
 from utils.utils import DataMixin, get_context
 
 
@@ -26,8 +29,11 @@ class AccountPageView(DataMixin, TemplateView):
         return {**context, **data}
 
 
-class ForgotPasswordPageView(DataMixin, TemplateView):
-    template_name = 'account/forgot_password.html'
+class PasswordResetPageView(DataMixin, PasswordResetView):
+    form_class = UserPasswordResetForm
+    template_name = 'account/password_reset_form.html'
+    subject_template_name = 'account/password_reset_subject.txt'
+    email_template_name = 'account/password_reset_email.txt'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -35,7 +41,39 @@ class ForgotPasswordPageView(DataMixin, TemplateView):
         return {**context, **data}
 
 
-class UserRegistration(DataMixin, CreateView):
+class PasswordResetDonePageView(DataMixin, PasswordResetDoneView):
+    template_name = 'account/password_reset_done.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        data = self.get_user_context(title='Письмо на сброс пароля')
+        return {**context, **data}
+
+
+class PasswordResetConfirmPageView(DataMixin, PasswordResetConfirmView):
+    form_class = UserPasswordResetConfirmForm
+    template_name = 'account/password_reset_confirm.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        data = self.get_user_context(title='Изменить пароль')
+        if self.validlink:
+            context['validlink'] = True
+        else:
+            context.update({'form': None, 'validlink': False})
+        return {**context, **data}
+
+
+class PasswordResetCompletePageView(DataMixin, PasswordResetCompleteView):
+    template_name = 'account/password_reset_complete.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        data = self.get_user_context(title='Пароль успешно изменен')
+        return {**context, **data}
+
+
+class UserRegistration(SuccessMessageMixin, DataMixin, CreateView):
     form_class = UserRegistrationForm
     template_name = 'account/login.html'
 
@@ -47,14 +85,15 @@ class UserRegistration(DataMixin, CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('home')
+        messages.success(self.request, 'Спасибо за регистрацию в интернет-магазине "ВелоСам"!')
+        return redirect('dashboard')
 
     def form_invalid(self, form):
-        print('invalid:', form.errors)
+        messages.warning(self.request, 'Пользователь с таким email уже существует.')
         return redirect('login_register')
 
 
-class LoginPageView(DataMixin, LoginView):
+class LoginPageView(SuccessMessageMixin, DataMixin, LoginView):
     form_class = UserLoginForm
     template_name = 'account/login.html'
 
@@ -64,10 +103,11 @@ class LoginPageView(DataMixin, LoginView):
         return {**context, **data}
 
     def get_success_url(self):
-        return reverse_lazy('home')
+        messages.info(self.request, ' ')
+        return reverse_lazy('dashboard')
 
     def form_invalid(self, form):
-        print('invalid:', form.errors)
+        messages.error(self.request, 'Введеные email или пароль неверны.')
         return redirect('login_register')
 
 
@@ -78,14 +118,11 @@ class UserLogout(LogoutView):
 def login_register_user(request):
     login_form = UserLoginForm()
     register_form = UserRegistrationForm()
-
     data = get_context(title='Вход-Регистрация')
 
     context = {
         'register_form': register_form,
         'login_form': login_form,
     }
-
     context = {**context, **data}
-
     return render(request, 'account/login.html', context=context)
