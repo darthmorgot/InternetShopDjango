@@ -1,13 +1,14 @@
 from django.db import models
 from django.urls import reverse
 from django.core.exceptions import ValidationError
+from transliterate import slugify
 
 from mptt.models import MPTTModel, TreeForeignKey
 
 
 class Category(MPTTModel):
     name = models.CharField(max_length=100, db_index=True, verbose_name='Название')
-    slug = models.SlugField(max_length=100, unique=True, db_index=True, verbose_name='URL')
+    slug = models.SlugField(max_length=100, blank=True, unique=True, db_index=True, verbose_name='URL')
     parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children',
                             verbose_name='Родительская')
 
@@ -16,6 +17,11 @@ class Category(MPTTModel):
 
     def get_absolute_url(self):
         return reverse('product_by_category', kwargs={'category_slug': self.slug})
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(str(self.name))
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Категории'
@@ -37,7 +43,7 @@ def validate_range(value):
 
 class Product(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name='Название')
-    slug = models.SlugField(max_length=100, unique=True, db_index=True, verbose_name='URL', null=True)
+    slug = models.SlugField(max_length=100, blank=True, unique=True, db_index=True, verbose_name='URL', null=True)
     description = models.TextField(verbose_name='Описание')
     price = models.PositiveIntegerField(default=0, verbose_name='Цена')
     discount = models.PositiveIntegerField(default=0, validators=[validate_range], verbose_name='Скидка, %')
@@ -51,6 +57,11 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse('product', kwargs={'product_id': self.pk})
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(str(self.name))
+        super().save(*args, **kwargs)
 
     def get_discount_price(self):
         return int(self.price - (self.price * self.discount / 100))
