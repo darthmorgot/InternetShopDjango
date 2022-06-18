@@ -18,6 +18,7 @@ class ImageInline(admin.TabularInline):
 
 class ProductAdmin(admin.ModelAdmin):
     inlines = [ImageInline]
+    list_display = ['name', 'price', 'quantity', 'category']
 
 
 admin.site.register(Category, CustomMPTTModelAdmin)
