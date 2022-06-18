@@ -31,9 +31,9 @@ class AccountPageView(DataMixin, TemplateView):
 
 class PasswordResetPageView(DataMixin, PasswordResetView):
     form_class = UserPasswordResetForm
-    template_name = 'account/password_reset_form.html'
-    subject_template_name = 'account/password_reset_subject.txt'
-    email_template_name = 'account/password_reset_email.txt'
+    template_name = 'account/password/password_reset_form.html'
+    subject_template_name = 'account/password/password_reset_subject.txt'
+    email_template_name = 'account/password/password_reset_email.txt'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -42,7 +42,7 @@ class PasswordResetPageView(DataMixin, PasswordResetView):
 
 
 class PasswordResetDonePageView(DataMixin, PasswordResetDoneView):
-    template_name = 'account/password_reset_done.html'
+    template_name = 'account/password/password_reset_done.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -52,7 +52,7 @@ class PasswordResetDonePageView(DataMixin, PasswordResetDoneView):
 
 class PasswordResetConfirmPageView(DataMixin, PasswordResetConfirmView):
     form_class = UserPasswordResetConfirmForm
-    template_name = 'account/password_reset_confirm.html'
+    template_name = 'account/password/password_reset_confirm.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -65,7 +65,7 @@ class PasswordResetConfirmPageView(DataMixin, PasswordResetConfirmView):
 
 
 class PasswordResetCompletePageView(DataMixin, PasswordResetCompleteView):
-    template_name = 'account/password_reset_complete.html'
+    template_name = 'account/password/password_reset_complete.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
